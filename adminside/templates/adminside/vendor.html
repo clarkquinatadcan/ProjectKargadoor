@@ -1,0 +1,49 @@
+{% extends 'adminside/base.html' %}
+{% load staticfiles %}
+
+{% block title %} {% endblock %}
+
+{% block script %}
+    {% include '__inc/vendor_approval/vendor_approval.html' %}
+{% endblock %}
+
+    {% block content %}
+        <div class="container">
+            <div id="main">
+                <div class="wrapper">
+                    <table class="highlight">
+                        <thead>
+                            <tr>
+                                <th> Firstname</th>
+                                <th> Lastname</th>
+                                <th>Company Name</th> 
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Cellphone Number</th>
+                                <th>Tel. Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for vendor in vendor_data %}
+                                <tr>
+                                    <td>{{ vendor.fname }}</td>      
+                                    <td>{{ vendor.lanme }}</td>                                    
+                                    <td>{{ vendor.CompanyName }}</td>                                    
+                                    <td>{{ vendor.address }}</td>                                    
+                                    <td>{{ vendor.Email }}</td>   
+                                    <td>{{ vendor.mobile }}</td>   
+                                    <td>{{ vendor.tel }}</td>   
+                                    
+                                    <td> <a href="{% url 'adminside:activate_vendor' id=vendor.ven_id %}">Approve</a></td>                                
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+{% block js%}
+
+{% endblock %}

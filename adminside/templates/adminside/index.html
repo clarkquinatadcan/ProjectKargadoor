@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<html>
+    <title>{% block title %} {% endblock %}</title>
+    <header>
+         {% block script %} {% endblock %}
+    </header>    
+    <body>
+        {% block content %}
+        {% endblock %}
+        
+     {% block js%}
+     {% endblock %}
+    </body>
+</html>
+

@@ -1,0 +1,302 @@
+{% extends 'client/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Trucks {% endblock %}
+
+{% block script %}
+	{% include '__inc/client-vehicleList/css/client-vehicleList-css.html' %}
+	
+
+    <script src="{% static 'content/main/jquery/jquery.min.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+			$("#myInput").on("keyup", function() {
+				var value = $(this).val().toLowerCase();
+					$(".single-truck").filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			
+			});
+
+
+			$('#filters :checkbox').click(function () {
+				if ($('input:checkbox:checked').length) {
+					$('.single-truck').hide();
+					$('input:checkbox:checked').each(function () {
+						$('.single-truck[data-' + $(this).prop('name') + '*="' + $(this).val() + '"]').show();
+					});
+				} else {
+					$(".single-truck").show();
+				}
+			});
+        
+        });
+        </script>
+
+{% endblock %}
+
+    {% block sub_content %}
+     <!-- START CONTENT -->
+     <section class="client-vehicle-map">
+			<div class="col s12 map-wrapper">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3925.2150537151456!2d123.8966513!3d10.3246673!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1525963051585" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+		<div class="trucks-calculation">
+			<form action="#">
+					<div class="row">
+						<div class="date-time">
+							<div class="input-field col s12 m3">
+								<i class="material-icons prefix">date_range</i>
+								<input type="date" data-date-inline-picker="false" data-date-open-on-focus="true" placeholder="Start Date"/>
+							</div>
+							<div class="input-field col s12 m3">
+								<i class="material-icons prefix">date_range</i>
+								<input type="date" data-date-inline-picker="false" data-date-open-on-focus="true" placeholder="End Date"/>
+							</div>
+							<div class="input-field col s12 m3">
+								<i class="material-icons prefix">access_time</i>
+								<input type="time" data-date-inline-picker="true" data-time-open-on-focus="true" placeholder="Start Time"/>
+							</div>
+							<div class="input-field col s12 m3">
+								<i class="material-icons prefix">access_time</i>
+								<input type="time" data-date-inline-picker="false" data-time-open-on-focus="true" placeholder="End Time"/>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="address">
+
+								<div class="input-field col s12 m2">
+										<select class="icons">
+											<option value="" disabled selected>Vehicle Type</option>											
+											{% for i in datas %}
+											<option value="{{i.description}}">{{i.description}}</option>
+											{% endfor %}
+										</select>
+								</div>
+								<div class="input-field col s12 m4">
+										<i class="material-icons prefix">location_on</i>
+										<input id="icon_prefix" type="search" class="validate" placeholder="Pickup Address">
+								</div>
+								<div class="input-field col s12 m4">
+										<i class="material-icons prefix">location_on</i>
+										<input id="icon_prefix" type="search" class="validate" placeholder="Pickup Address">
+								</div>
+								   <!-- calculate modal-trigger  -->
+								<div class="col s12 m2 calculate waves-effect waves-light">
+										<a class="waves-effect waves-light modal-trigger" href="#calculate">CALCULATE</a>
+								</div>
+						</div>
+					</div>
+		   </form>
+		   
+		     <!-- Caculate Modal Structure -->
+			<div id="calculate" class="modal calculate-modal">
+				<div class="modal-content">
+					<div class="truck-selected-img">
+						<img src="{% static 'image/truck-thumbnail.png' %}">
+					</div>
+					<div class="standart-rate">
+						<p>STANDARD RATE</p>
+						<span class="price">P 2,000.00</span>
+					</div>
+					<div class="details">
+							<table class="">
+								<tbody>
+									<tr>
+										<th>Vehicle Type</th>
+										<td>Dump Truck</td>
+									</tr>
+									<tr>
+										<th>Price/hour</th>
+										<td>P 1000.00</td>
+									</tr>
+									<tr>
+										<th>Quantity</th>
+										<td>2</td>
+									</tr>
+									<tr>
+										<th>Stock on Hand</th>
+										<td>1</td>
+									</tr>
+									<tr>
+										<th>Capacity</th>
+										<td>200lbs</td>
+									</tr>
+									<tr>
+										<th>Tank Capacity</th>
+										<td>2 Liters</td>
+									</tr>
+									<tr>
+										<th>Plate Number</th>
+										<td>ABS-T849</td>
+									</tr>
+									
+								</tbody>
+							</table>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+						<a href="#!" class="modal-close waves-effect waves-green btn-flat">Back to Website</a>
+						<a href="#!" class="modal-close waves-effect waves-green btn-flat">Reserve Now</a>
+				</div>
+			</div>
+		    <!-- END Caculate Modal Structure -->
+			
+		</div>
+	 </section>
+
+	 
+     <div class="container">
+
+			
+     	<section id="client-vehicleList" class="client-vehicleList">
+
+			<div class="row">
+					<div class="col s12 m6">
+                            <!-- Slider 1 -->
+                            <div class="slider" id="slider1">
+                                <!-- Slides -->
+                                <div class="vendor-adds">
+                                    <img src="{% static 'img/adds/adver2.png' %}">
+    
+                                </div>
+    
+                                <div class="vendor-adds">
+                                    <img src="{% static 'img/adds/adver2.png' %}">
+                                    <span class="titleBar">
+                                        <p>Companyy Name </p>
+                                        <p>Short Description or tags </p>
+                                    </span>
+                                </div>
+                                <!-- The Arrows -->
+                                <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
+                                <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
+                                <!-- Title Bar -->
+                                
+                            </div>
+                    </div>
+                    <div class="col s12 m6">
+                            <div class="slider" id="slider3">
+                                    <!-- Slides -->
+                                    
+    
+                                    <div class="vendor-adds">
+                                        <img src="{% static 'img/Lipayran.jpg' %}">
+                                    </div>
+    
+                                    <div class="vendor-adds">
+                                        <img src="{% static 'img/adds/adver2.png' %}">
+                                    </div>
+    
+                                    <div class="vendor-adds">
+                                        <img src="{% static 'img/homepage-background.jpeg' %}">
+                                    </div>
+                                    <div class="vendor-adds">
+                                        <img src="{% static 'img/adds/advertise.png' %}">
+                                    </div>
+    
+                                    <!-- The Arrows -->
+                                    <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
+                                    <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
+                                   
+                            </div>
+                    </div>
+			</div>
+
+     		<div class="row">
+     			<form action="">
+     				<div class="row">	
+     					<div class="input-field col s12 m6 left">
+     						<span class="settings"> <a> <i class="material-icons prefix">settings</i> </a></span>
+     					</div>
+     					<div class="input-field col s12 m6 right search">
+     						<input id="myInput" type="text" name="vehicle-search" placeholder="Search...">
+     						<i class="material-icons right">search</i>
+     					</div>
+					 </div>
+		<!--  -->
+
+		<!--  -->
+     				<div class="row">
+						 <div class="col s12">
+						 	 <div class="choices" id="filters" style="display:none">
+						  		<div class="row">
+									{% for i in datas %}
+									<div class="col s12 m2">
+										<input type="checkbox" class="filled-in" name="category" value="{{i.description}}" id="{{i.description}}">
+										<label for="{{i.description}}">{{i.description}}</label>
+									</div>
+									{% endfor %}
+						  		</div>
+
+						  
+						  </div>
+						 </div>
+					</div>
+     			</form>
+     		</div>
+
+     		<!-- trucks list -->
+     		<div class="row trucks">
+				{% if msg == '200' %}
+					{% for i in search %}
+						<div id="myList" class="col s12 m4 single-truck" data-category="{{i.vechicle_type}}">
+							<div class="card">
+								<div class="card-image">
+									<img src="{{url}}/{{i.platenumber}}_{{count}}">
+									<!-- <img src="{% static 'image/2.jpg' %}"> -->
+								</div>
+								<div class="card-content">
+									<div class="price-rating">
+										<span><img src="{% static 'img/4start-img.png' %}"></span>
+										<p class="right truck-price">Price: <span>P100.00/hr</span></p>
+									</div>
+									<div class="description">
+										<p class="desc">Description:</p>
+										<p class="truck-desc">{{ i.description  }}</p>
+									</div>
+								</div>
+								<div class="booking-quotation">
+									<div class="row">
+										<div class="col s12">
+											<a class="waves-effect waves-light btn orange darken-2 s12" href="{% url 'client:booking' v_id=i.vehicle_id %}">Reserve Now</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				{% else %}
+					<h4>No Vehicle Found...</h4>
+				{% endif %}
+     		</div>
+
+     		<!-- <div class="row">
+     			<div id="example"></div>
+     			<div id="pagination-long"></div>
+     		</div> -->
+
+     		<!-- pagination -->
+     		<div class="row right">
+				<ul class="pagination">
+				<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+				<li class="active"><a href="#!">1</a></li>
+				<li class="waves-effect"><a href="#!">2</a></li>
+				<li class="waves-effect"><a href="#!">3</a></li>
+				<li class="waves-effect"><a href="#!">4</a></li>
+				<li class="waves-effect"><a href="#!">5</a></li>
+				<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+				</ul>
+     		</div>
+     	</section>
+     </div>
+     <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/client-vehicleList/js/client-vehicleList-js.html' %}
+{% endblock %}

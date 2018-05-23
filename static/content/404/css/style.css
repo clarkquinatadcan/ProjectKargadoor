@@ -1,0 +1,39 @@
+
+    /* 404 page */
+    header, footer {
+        display: none;
+    }.page-not-page {
+        position: relative;
+        top: 11em;
+    }
+    .page-not-page .err-message {
+        text-align: center;
+    }
+    .page-not-page .karga-logo img {
+        max-width: 100%;
+        width: 70% !important;
+        float: right;
+    }
+    .page-not-page .err-message {
+        padding-top: 6em;
+    }
+    .page-not-page .err-message img {
+        max-width: 100%;
+        width: 25% !important;
+    }
+    .page-not-page .err-message p {
+        font-weight: bold;
+        line-height: 0.5;
+        text-shadow: 1px 1px 2px #0000003b;
+    }
+    .under-maintenance img{
+        width: 100%;
+        margin: 80px 0;
+    }
+    .back {
+        margin: 50px 0;
+        position: absolute;
+    }
+    .back a {
+        color: black;
+    }

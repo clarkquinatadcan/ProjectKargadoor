@@ -1,0 +1,131 @@
+{% extends 'adminside/base.html' %}
+{% load staticfiles %}
+
+{% block title %} {% endblock %}
+
+{% block script %}
+    {% include '__inc/vehicle_approval/vehicle_approval.html' %}
+<style>
+         
+
+    
+            
+</style>
+{% endblock %}
+
+    {% block content %}
+        <div>
+            <nav>
+                <div class="nav-wrapper ">
+                    <div class="container">
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="#">Admin</a></li>
+                            <li><a href="{% url 'vendor:logout' %}">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>    
+        <div class="container">
+            <div class="section1">    
+                <div id="main">
+                    <div class="wrapper">
+                            <div class="tab">
+                                    <button class="tablinks" onclick="aprrove_type(event, 'vehicle')" id="defaultOpen">Vehicle List</button>
+                                    <button class="tablinks" onclick="aprrove_type(event, 'vendor')">Vendor List</button>
+                                </div>
+                                
+                                <div id="vehicle" class="tabcontent">
+                                    <table class="highlight responsive-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Vendor ID</th> 
+                                                <th>Type</th>
+                                                <th>Plate number</th>
+                                                <th>Description</th>
+                                                <th>Register date</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for vehicle in vehicle_data %}
+                                                <tr>
+                                                    <td>{{ vehicle.vendor_id }}</td>      
+                                                    <td>{{ vehicle.vechicle_type }}</td>                                    
+                                                    <td>{{ vehicle.platenumber }}</td>                                    
+                                                    <td>{{ vehicle.description }}</td>                                    
+                                                    <td>{{ vehicle.reg_date }}</td>   
+                                                    <td> <a href="{% url 'adminside:activate' id=vehicle.vehicle_id v_type='vehicle' %}">Approve</a></td>                                
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div id="vendor" class="tabcontent">
+                                    <table class="highlight">
+                                        <thead>
+                                            <tr>
+                                                <th> Firstname</th>
+                                                <th> Lastname</th>
+                                                <th>Company Name</th> 
+                                                <th>Address</th>
+                                                <th>Email</th>
+                                                <th>Cellphone Number</th>
+                                                <th>Tel. Number</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for vendor in vendor_data %}
+                                                <tr>
+                                                    <td>{{ vendor.fname }}</td>      
+                                                    <td>{{ vendor.lanme }}</td>                                    
+                                                    <td>{{ vendor.CompanyName }}</td>                                    
+                                                    <td>{{ vendor.address }}</td>                                    
+                                                    <td>{{ vendor.Email }}</td>   
+                                                    <td>{{ vendor.mobile }}</td>   
+                                                    <td>{{ vendor.tel }}</td>   
+                                                    
+                                                    <td> <a href="{% url 'adminside:activate' id=vendor.ven_id v_type='vendor' %}">Approve</a></td>                                
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                            
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    {% endblock %}
+
+{% block js%}
+
+<script>
+        function aprrove_type(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        </script>
+
+{% endblock %}

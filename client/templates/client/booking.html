@@ -1,0 +1,145 @@
+{% extends 'client/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Booking {% endblock %}
+
+{% block script %}
+    {% include '__inc/client_booking/css/client_booking-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+     <!-- START CONTENT -->
+     <section id="content"> 
+        <div class="container booking">
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="truck-for-booking">
+                        <img src="{% static 'image/truck-thumbnail.png' %}">
+                        <p class="description">Description:</p>
+                            <span>Product name SINOTRUK HOWO 6x4 6 wheeler 336 hp truck dumper tipper dump truck Product description SINOTRUK HOWO 6x4 6 wheeler 336 hp truck dumper tipper dump truck Shipping Transport the SINOTRUK HOWO 6x4 6 wheeler 336 hp truck dumper tipper dump truck By flat rack , bulk cargo or Roll-roll ,...
+                            </span>
+                        <div class="row">
+                            <div class="col s12 add-info">
+                                <p class="add-info">Additional Information</p>
+                                <table class="bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th>Vehicle Type</th>
+                                            <td>Dump Truck</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Price/hour</th>
+                                            <td>P 1000.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Quantity</th>
+                                            <td>2</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Stock on Hand</th>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Capacity</th>
+                                            <td>200lbs</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Tank Capacity</th>
+                                            <td>2 Liters</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Plate Number</th>
+                                            <td>ABS-T849</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <div class="row booking-form">
+                        <p class="header-text">Book Now<div class="divider"></div></p>
+                        <form class="col s12" method="POST" id="form">{% csrf_token %}
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">location_on</i>
+                                    <input id="addrss" type="text" name="location" class="validate" placeholder="" required>
+                                    <input type="text" name="a_lat" value="10.2852745" class="validate" hidden>
+                                    <input type="text" name="a_lon" value="123.8528685" class="validate" hidden>
+                                    
+                                    <input type="text" name="b_lat" id="lat" value="" class="validate" hidden>
+                                    <input type="text" name="b_lon" id="lon" value="" class="validate" hidden>
+                                    <label for="icon_prefix">Location</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">date_range</i>
+                                    <input id="icon_prefix" type="datetime-local" name="start_date" class="validate" value="" required>
+                                    <!-- <label for="icon_prefix">Start Date</label> -->
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">date_range</i>
+                                    <input id="icon_telephone" type="datetime-local" name="end_date" class="validate" value="" required>
+                                    <!-- <label for="icon_telephone">End Date</label> -->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">access_time</i>
+                                    <input id="icon_prefix" type="time" name="picking_time" class="validate" placeholder="" value="" required>
+                                    <label for="icon_prefix">Pick Up Time</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">attach_money</i>
+                                    <input id="icon_telephone" type="tel" name="price" class="validate" placeholder="000:00" required>
+                                    <label for="icon_telephone">Price</label>
+                                </div>
+                                <div class="col s12">
+                                        <label>Driver</label>
+                                        <select class="browser-default" name="wDriver" required>
+                                          <option value="" disabled selected>Choose your option</option>
+                                          <option value="1">with driver</option>
+                                          <option value="2">w/o driver</option>
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <a class="waves-effect waves-light btn right orange darken-2" id="formsub">submit</a>
+                                </div>
+                            </div>
+                            {% if messages %}         
+                            <div class="row">
+                                <div class="col s12">
+                                    {% for message in messages %}
+                                    <div id="card-alert" class="col s12 card red">
+                                        <div class="card-content white-text">
+                                            <p>OOOPs : The Form is Invalid...</p>
+                                            <p>{{ message }}.</p>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
+                        </form>    
+                        
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/client_booking/js/client_booking-js.html' %}
+
+{% endblock %}

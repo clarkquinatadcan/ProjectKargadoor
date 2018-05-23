@@ -1,0 +1,321 @@
+/* Custom Stylesheet */
+
+@font-face {
+    font-family: 'HelveticaNeueMed';
+    src: url('../../../fonts/helveticaneue/HelveticaNeueMed.ttf');
+}
+
+body {
+    font-family: 'HelveticaNeueMed';
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size: 1em;
+}
+.header-text {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: #f5f7fa;
+}
+    /* main */
+.section1 {
+    color: #00000057;
+}
+#content {
+    background-color: #f5f7fa;
+    padding: 10px 0;
+    border-top: 1px solid #bcbcbcbc;
+}
+
+    /* dashboard page  */
+.dash-content2 {
+    background-color: #fff;
+    padding: 0 50px !important;
+    border-radius: 8px;
+    border: 1px solid #b3acac52;
+}
+.booking {
+    background-color: #fff;
+    padding: 5px 35px !important;
+    border-radius: 8px;
+    border: 1px solid #b3acac52;
+}
+.bookings-made {
+    border-bottom: 1px solid #ececec;
+}
+.dash-content1 {
+    padding-right: 3% !important;
+}
+.dash-content1 .header-text .material-icons {
+    color: #ffffffa3;
+    background-color: #d2cccca3;
+    border-radius: 100%;
+    font-size: 16px;
+}
+.dash-content1 .arrow_down {
+    color: red;
+    font-weight: normal;
+}
+.dash-content1 .arrow_up {
+    font-weight: normal;
+    color: green;
+}
+.dash-content1 table thead {
+    border-bottom: none;
+}
+.dash-content1 table thead th{
+    text-align: center;
+    font-weight: 500;
+}
+.dash-content1 table tbody td {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+.dash-content2 row:first-child {
+    border-bottom: 1px solid #d8d6d6ad;
+    padding-bottom: 25px;
+}
+.dashboard .card {
+    box-shadow: none;
+    margin: 0;
+}
+.dashboard .card .card-content {
+    padding: 5px;
+}
+.dashboard .card .card-content .card-stats-number {
+    font-size: 2rem;
+    line-height: 0;
+    margin: 0 0 0.912rem 0;
+}
+.dashboard .card-stats-compare span {
+    font-size:11px;
+}
+.todays-booking {
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 40px;
+}
+.dashboard table.striped > tbody > tr > td {
+    font-size: 12px;
+}
+.future-booking {
+    display: flex;
+    position: relative;
+    top: 2em;
+}
+.future-booking li {
+    margin-right: 15px;
+}
+
+    /* transaction page */
+.transaction {
+    background-color: #fff;
+    padding: 10px 30px 30px 30px;
+    border-radius: 8px;
+    border: 1px solid #b3acac52;
+}
+.transaction .transac {
+    display: flex;
+    position: relative;
+    top: 2em;
+}
+.transaction .transac li {
+    margin-right: 15px;
+}
+.responsive-table thead th {
+    color: #ee7c00;
+    font-weight: 500;
+}
+.responsive-table tbody .badge-status{
+    display: block;
+    text-align: left;
+}
+table span.badge {
+    color:#fff;
+    width: 100%;
+}
+.responsive-table tbody .view-icon {
+    float: none;
+    text-align: center;
+    color: #007fff;
+}
+
+    /* calendar page */
+#calendar {
+    padding-top: 4em;
+}
+.fc-unthemed .fc-toolbar .fc-center h2 {
+    font-size: 2em;
+}
+
+
+
+/*today's booking modal */
+#todaysBookingDetail .customer-name {
+    font-size: 20px;
+    color: #f16726;
+    font-weight: bold;
+}
+#todaysBookingDetail .modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#todaysBookingDetail .modal-close .material-icons {
+    color: #59595999;
+    padding: 6px 6px;
+    right: 4px;
+    top: 4px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#todaysBookingDetail {
+    max-width: 32%;
+}
+#todaysBookingDetail td, th {
+    font-weight: normal;
+}
+
+/*loading screen*/
+.loading-screen {
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffffe0;
+}
+.preloader-wrapper {
+    top: 50%;
+    left: 50%;
+}
+
+/* bookings tabale data */
+.bookings {
+    background-color: #fff;
+    padding: 5px 35px !important;
+    border-radius: 8px;
+    border: 1px solid #b3acac52;
+}
+.bookings .dataTables_wrapper {
+    padding-top: 32px;
+}
+.bookings .tabs .tab a {
+    border-bottom: 2px solid #d5d6d7bf;
+    color: #f16726;
+    font-weight: bold;
+}
+.bookings .tabs .tab a.active {
+    background-color: #f6f7fa;
+}
+.bookings .tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #f6f7fa;
+}
+.bookings .tabs .indicator {
+    height: 100%;
+    border: 2px solid #d5d6d7bf;
+    border-bottom: 2px solid #fff!important;
+    background-color: transparent;
+}
+
+
+/* datatable */
+.bookings table.dataTable tbody th, table.dataTable tbody td {
+    padding: 15px 10px !important;
+}
+.bookings table.dataTable thead th, table.dataTable thead td {
+    padding: 20px 18px !important;
+    border-bottom: none !important;
+}
+.bookings table.dataTable.no-footer {
+    border-bottom: 1px solid #4f769c36;
+    padding: 15px 0px;
+}
+.bookings .dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #f16726 !important;
+}
+.bookings .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #f16726 !important;
+    background: transparent;
+    color: #fff !important;
+    border: none;
+}
+.bookings  .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #f16726 !important;
+    background: transparent;
+    color: #fff !important;
+}
+.bookings .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    /* background-color: red; */
+    background: none;
+    color: #fff !important;
+}
+.bookings .select-wrapper .caret {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 0;
+    fill: rgba(0,0,0,0.87);
+}
+
+/* Style the tab */
+.bookings .tab {
+    margin-top: 15px;
+    overflow: hidden;
+    float: right;
+    padding: 0 0 32px 0;
+  
+}
+
+/* Style the buttons inside the tab */
+.bookings .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 7px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    border-radius: 3px;
+    color: #039be5;
+}
+
+/* Change background color of buttons on hover */
+.bookings .tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.bookings .tab button.active {
+    background-color: #ee7c00;
+    color: #fff;
+}
+
+/* Style the tab content */
+.bookings .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

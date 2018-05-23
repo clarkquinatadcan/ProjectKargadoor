@@ -1,0 +1,27 @@
+/* === CUSTOM FOOTER === */
+.homepage-footer {
+    padding: 20px 0;
+    background-color: #4a7699;
+}
+.homepage-footer .footer-logo img {
+    max-width: 100%;
+    width: 65%;
+    background-color: #fff;
+    padding: 5px;
+}
+.footer-header-text {
+    font-size: 12px;
+}
+.homepage-footer ul li a {
+    font-size: 12px;
+}
+.footer-apps img {
+    max-width: 100%;
+}
+.footer-content {
+    display: flex;
+}
+.footer-content .logo-section {
+    display: flex;
+    align-items: center;
+}

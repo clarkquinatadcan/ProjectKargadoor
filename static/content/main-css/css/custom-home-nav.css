@@ -1,0 +1,86 @@
+/* custom homepage navbar */
+
+/* header fonts */
+@font-face {
+    font-family: 'Cocogoose Pro Semilight-trial';
+    src: url('../../../fonts/Cocogoose Pro/Cocogoose Pro Semilight-trial.ttf');
+}
+
+/* navbar fonts */
+@font-face {
+    font-family: 'HelveticaNeue-CondensedBold';
+    src: url('../../../fonts/helveticaneue/HelveticaNeue-CondensedBold.ttf');
+}
+
+/* body fonts */
+@font-face {
+    font-family: 'HelveticaNeueMed';
+    src: url('../../../fonts/helveticaneue/HelveticaNeueMed.ttf');
+}
+
+.container {
+    max-width: 980px;
+}
+
+body {
+    font-family: 'HelveticaNeueMed';
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size: 1.1em;
+    color: #2b2a2ad6;
+}
+.home-header-text {
+    font-family: 'Cocogoose Pro Semilight-trial' !important;
+    color: #000;
+}
+
+main {
+    flex: 1 0 auto;
+    background-color: #f5f7fa;
+}
+
+/* Home page */
+
+    /* navbar */
+.navbar-fixed {
+    height: 105px;
+}
+nav {
+    background-color: #ffffff !important;
+    height: 105px;
+    line-height: 104px;
+    box-shadow: none;
+}
+nav .brand-logo {
+    padding: 15px 0;
+}
+.homepage-navbar .brand-logo img{
+    width: 175px;
+    left: 15px;
+}
+ nav ul a {
+    font-family: 'HelveticaNeue-CondensedBold';
+    color: #f1592a;
+    font-weight: bold;
+    padding: 0 8px;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+.homepage-navbar ul li:nth-child(4) {
+    padding: 0 8px 0 35px;
+}
+.homepage-navbar ul li .sign-up, 
+.homepage-navbar ul li .log-in {
+    color: #000;
+} 
+nav .nav-wrapper i {
+    height: 75;
+    line-height: 75px;
+}
+
+    
+
+/* end navbar */

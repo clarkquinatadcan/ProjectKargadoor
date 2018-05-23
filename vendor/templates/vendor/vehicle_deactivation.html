@@ -1,0 +1,37 @@
+{% extends 'vendor/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Deactivation {% endblock %}
+
+{% block script %}
+    {% include '__inc/vehicle_deactivation/css/vehicle_deactivation-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+     <!-- START CONTENT -->
+     <section id="content">
+        <div class="container vehicle-deactivate">
+            <div class="row"> 
+                <form method="POST" id="form" enctype="application/json">{% csrf_token %}
+                    <div class="col s12 center">
+                        <p class="header-text center">
+                            <span>Why you want to deactivate this vehicle?</span> 
+                        </p>
+                    </div>
+                    <div class="text-input col s12">
+                        <textarea id="deactivation-message" name="particulars" class="materialize-textarea deactivation-message validate" placeholder="Enter your message here..."></textarea>
+                        <div class="col s12">
+                            <a class="waves-effect waves-light btn center orange darken-2" id="formsub">Submit</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/vehicle_deactivation/js/vehicle_deactivation-js.html' %}
+{% endblock %}

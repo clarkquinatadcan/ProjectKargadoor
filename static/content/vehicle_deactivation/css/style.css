@@ -1,0 +1,114 @@
+/* Custom Stylesheet */
+@font-face {
+    font-family: 'HelveticaNeueMed';
+    src: url('../../../fonts/helveticaneue/HelveticaNeueMed.ttf');
+}
+
+body {
+    font-family: 'HelveticaNeueMed';
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size: 1em;
+}
+.header-text {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+main {
+    flex: 1 0 auto;
+    background-color: #f5f7fa;
+}
+nav {
+    box-shadow: none;
+}
+.navbar-fixed {
+    height: 92px;
+}
+nav.nav-extended .nav-wrapper {
+    min-height: 62px;
+}
+nav.nav-extended .nav-content {
+    line-height: 32px;
+}
+nav .brand-logo {
+    font-size: 1em;
+    font-weight: 600;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+nav ul a {
+    font-size: 1em;
+}
+nav.nav-extended .nav-content .container {
+    border-top: 1px solid #42404026;
+}
+nav.nav-extended .nav-content .container li a {
+    font-size: 1em;
+    font-weight: 500;
+}
+nav ul li.active {
+    background-color: #ffff; 
+}
+nav ul li.active a {
+    color: #ee7c00;
+    
+}
+.nav-icon {
+    position: relative;
+    right: -128px;
+}
+.nav-icon li a {
+    padding: 0 5px;
+}
+.nav-icon li a i {
+    height: 32px;
+    line-height: 32px;
+}
+
+    /* main */
+.section1 {
+    color: #00000057;
+}
+#content {
+    background-color: #f5f7fa;
+    padding: 10px 0;
+    border-top: 1px solid #bcbcbcbc;
+}
+
+    /* table */
+table.striped > tbody > tr:nth-child(odd) {
+    background-color: rgb(246, 247, 250);
+}
+table.striped > tbody > tr > td {
+    color: #4f4f4fcf;
+}
+
+/* Deactivation Vehicle Page */
+.vehicle-deactivate {
+    background-color: #fff;
+    padding: 0px 30px 30px 30px;
+    border-radius: 8px;
+    border: 1px solid #b3acac52;
+}
+.vehicle-deactivate img {
+    max-width: 100%;
+    width: 9%;
+    float: left;
+    padding-right: 0px;
+}
+.vehicle-deactivate .text-input {
+    text-align: center;
+}
+.vehicle-deactivate textarea.materialize-textarea {
+    height: 10rem;
+    border: 1px solid #00000026;
+    background-color: #f6f7fa;;
+    border-radius: 4px;
+    width: 55%;
+    padding: 15px;
+}
+.vehicle-deactivate .btn {
+    width: 15%;
+}

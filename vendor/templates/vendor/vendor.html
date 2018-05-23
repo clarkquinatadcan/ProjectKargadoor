@@ -1,0 +1,90 @@
+
+<!-- PREPARE FOR CLEANING  -->
+
+
+{% extends 'vendor/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Vendor {% endblock %}
+
+{% block script %}
+    {% include '__inc/vendor/css/vendor-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+    <!-- START CONTENT -->
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <p class="header-text">
+                    Vendor Registration
+                </p>
+            </div>
+            <form action="" method="GET" enctype="application/json">
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                            <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                        <input id="fname" type="text" name="Fname">
+                        <label for="fname" class="center-align">First Name</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                        <input id="lname" type="text" name="Lname">
+                        <label for="lname" class="center-align">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                        <input id="address" type="text" name="address">
+                        <label for="address" class="center-align">Address</label>
+                    </div>
+                    
+                    <div class="input-field col s12 m6">
+                        <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                        <input id="email" type="text" name="Email">
+                        <label for="email" class="center-align">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                            <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                        <input id="tel" type="tel" name="tel">
+                        <label for="tel" class="center-align">Tel. No</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                            <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                        <input id="mobile" type="text" name="mobile">
+                        <label for="mobile" class="center-align">Mobile Number</label>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                        <input id="payment" type="text" name="Payment">
+                        <label for="payment" class="center-align">Mode of Payment</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                        <input id="company-name" type="text" name="CompanyName">
+                        <label for="company-name" class="center-align">Company Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m12 center">  
+                        <button class="btn waves-effect waves-light btn-large right  orange darken-2" type="submit" name="">Submit
+                            <!-- <i class="mdi-content-send right"></i> -->
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/vendor/js/vendor-js.html' %}
+{% endblock %}

@@ -1,0 +1,172 @@
+# def login(request):
+#     # Set time now /. UNIX TIME
+#     n         = datetime.datetime.now()
+#     unix_time = int(time.mktime(n.timetuple()))
+#     # end >.
+#     request.session["searchVehicle"] = []
+
+#     print(unix_time)
+#     # If method POST >.
+#     if request.method == "POST":
+#         username = None
+#         pwd      = None
+#         response = render(request, 'vendor/login.html')    
+#         if request.POST['username'] != None and request.POST['pass'] != None:
+
+#             json_data = {"uname": request.POST['username'], "pwd": request.POST['pass']}
+#             print(json_data,"LOG")
+#             # Initialize object >.
+#             reqData = controller(json_data)
+#             data    = controller.login(reqData)
+
+
+
+#             decode  = jwt.decode(data,verify=False)
+#             print(data,"DECODE")
+#             print(decode,"DECODE")
+
+#             # Saved session >.
+#             request.session['token'] = data
+#             request.session['uid']   = decode['uid']
+#             request.session['exp']   = decode['exp']
+#             # >.
+#             if request.session['uid'] == '':
+#                 print("No UID")
+#             else:
+#                 request.session['usrtype'] = decode["profile"][0]["usrtype"]
+#                 usrtype = request.session['usrtype']
+
+
+#             exp = request.session['exp']
+#             uid = request.session['uid']
+
+#             # checking session if Expired /.
+#             if unix_time >= int(exp):
+#                 print("Session Expired")
+#                 response = redirect('/vendor/login/')  
+#             else:
+#                 if  usrtype == 1:
+#                     print("Session Started")
+#                     print("USER STATUS is : {}".format(usrtype))
+#                     response = redirect('/admin/')
+#                 elif usrtype == 2:
+#                     print("Session Started")
+#                     print("USER STATUS is : {}".format(usrtype))
+#                     response = redirect('/vendor/dashboard/')
+#                 elif usrtype == 3:
+#                     print("Session Started")
+#                     print("USER STATUS is : {}".format(usrtype))
+#                     response = redirect('/../../')
+#                 else:
+#                     response = redirect('/vendor/login/') 
+#     # Refresh same page >.
+#     else:
+#         request.session['exp']   = unix_time
+#         request.session['uid']   = 0
+#         request.session['token'] = None
+#         request.session['usrtype'] = None
+
+#         exp = request.session['exp']
+#         uid = request.session['uid']
+#         if unix_time >= int(exp):
+#             print("Session Expired")
+#             response = render(request, 'vendor/login.html')
+#         else:
+#             print("Session Started")
+#             response = redirect('/vendor/dashboard/')
+#     return response
+
+
+
+def login(request):
+    if not request.user.is_authenticated: 
+            if 'HTTP_AUTHORIZATION' in request.META:
+                auth = request.META['HTTP_AUTHORIZATION'].split()
+                if len(auth) == 2:
+                    if auth[0].lower() == "basic":
+                        username, password = base64.b64decode(auth[1]).decode('utf-8').split(':')
+                        user = authenticate(username=username, password=password)
+                        if user is not None and user.is_active:
+                            # handle your view here
+
+                            # Set time now /. UNIX TIME
+                            n         = datetime.datetime.now()
+                            unix_time = int(time.mktime(n.timetuple()))
+                            # end >.
+                            request.session["searchVehicle"] = []
+
+                            print(unix_time)
+                            # If method POST >.
+                            if request.method == "POST":
+                                username = None
+                                pwd      = None
+                                response = render(request, 'vendor/login.html')    
+                                if request.POST['username'] != None and request.POST['pass'] != None:
+
+                                    json_data = {"uname": request.POST['username'], "pwd": request.POST['pass']}
+                                    print(json_data,"LOG")
+                                    # Initialize object >.
+                                    reqData = controller(json_data)
+                                    data    = controller.login(reqData)
+
+
+
+                                    decode  = jwt.decode(data,verify=False)
+                                    print(data,"DECODE")
+                                    print(decode,"DECODE")
+
+                                    # Saved session >.
+                                    request.session['token'] = data
+                                    request.session['uid']   = decode['uid']
+                                    request.session['exp']   = decode['exp']
+                                    # >.
+                                    if request.session['uid'] == '':
+                                        print("No UID")
+                                    else:
+                                        request.session['usrtype'] = decode["profile"][0]["usrtype"]
+                                        usrtype = request.session['usrtype']
+
+
+                                    exp = request.session['exp']
+                                    uid = request.session['uid']
+
+                                    # checking session if Expired /.
+                                    if unix_time >= int(exp):
+                                        print("Session Expired")
+                                        response = redirect('/vendor/login/')  
+                                    else:
+                                        if  usrtype == 1:
+                                            print("Session Started")
+                                            print("USER STATUS is : {}".format(usrtype))
+                                            response = redirect('/admin/')
+                                        elif usrtype == 2:
+                                            print("Session Started")
+                                            print("USER STATUS is : {}".format(usrtype))
+                                            response = redirect('/vendor/dashboard/')
+                                        elif usrtype == 3:
+                                            print("Session Started")
+                                            print("USER STATUS is : {}".format(usrtype))
+                                            response = redirect('/../../')
+                                        else:
+                                            response = redirect('/vendor/login/') 
+                            # Refresh same page >.
+                            else:
+                                request.session['exp']   = unix_time
+                                request.session['uid']   = 0
+                                request.session['token'] = None
+                                request.session['usrtype'] = None
+
+                                exp = request.session['exp']
+                                uid = request.session['uid']
+                                if unix_time >= int(exp):
+                                    print("Session Expired")
+                                    response = render(request, 'vendor/login.html')
+                                else:
+                                    print("Session Started")
+                                    response = redirect('/vendor/dashboard/')
+            # otherwise ask for authentification
+            response = HttpResponse("")
+            response.status_code = 401
+            response['WWW-Authenticate'] = 'Basic realm="restricted area"'
+            return response
+

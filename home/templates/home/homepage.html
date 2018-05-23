@@ -1,0 +1,550 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Home Page {% endblock %}
+
+{% block script %}
+    {% include '__inc/homepage/css/homepage-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+     <!-- START CONTENT -->
+     
+       <!-- Modal Login -->
+    <section id="login" class="login">
+        <div id="login/" class="modal">
+                    <a href="#!" class="modal-close"><i class="material-icons waves-effect waves-orange">close</i></a>
+            <div class="modal-content">
+                <p class="center login-txt">LOGIN </p>
+                <form method="POST" action="">{% csrf_token %}
+                    <div class="row">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="text" name="username">
+                                    <label for="username"><i class="material-icons">person</i> <span class="placeholder-icon">username</span></label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="password" name="pass">
+                                    <label for="password"><i class="material-icons">lock</i> <span class="placeholder-icon">password</span></label>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s12">
+                                    <input type="checkbox" class="filled-in" id="filled-in-box">
+                                    <label for="filled-in-box">Remember Me</label>
+                            
+                                    <span class="right forgot-password"><a href="" class="red-text">Forgot Password?</a></span>
+                                </div>
+                            </div>
+
+                            <div class="row center">
+                                <button class="waves-effect waves-light btn center">Login</button>
+                            </div>
+                    </div>
+                    <!-- sign in with social media accounts -->
+                    <div class="row">
+                            <p class="or-txt center">OR</p>
+                    </div>
+                    <div class="row">
+                            <div class="social-media center">
+                                <div class="row">
+                                    <div class="col s12">
+                                        <a class="waves-effect waves-light btn facebook-btn"><img src="{% static 'img/login-icon/facebook.png' %}"><span class="facebook">Login with Facebook</span></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <a class="waves-effect waves-light btn instagram-btn"><img src="{% static 'img/login-icon/instagram.png' %}"><span class="instagram">Login with Instagram</span></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <a class="waves-effect waves-light btn twitter-btn"><img src="{% static 'img/login-icon/twitter.png' %}"><span class=" ">Login with Twitter</span></a>
+                                    </div>    
+                                </div>
+                                <div class="row center create-account">
+                                    <a href="register/"> Create an Account </a>
+                                </div>
+                                
+                            </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- ==== END MODAL LOGIN ===  -->
+
+    <section id="content" class="homepage-section">
+        <div class="homepage">
+            <div class="container">
+                <div class="row vendor-client">
+                    <ul>
+                        <li><a href="{% url 'home:vendorRegistration' %}">I want to be a KARGADOOR</a></li>
+                        <li><a href="#availble-vehicles">I need KARGADOOR</a></li>
+                    </ul>
+                </div>
+                <div class="row ">
+                    <div class="col s12 m5 karga-logo">
+                        <img src="{% static 'image/404/karga404.png' %}">
+                    </div>
+                    <div class="s12 m7  karga-txt">
+                        <h1 class="white-text">Kargadoor Logistics</h1>
+                    </div>
+                </div>
+                <div class="row right">
+                    <p class="available">AVAILABLE ON</p>
+                    <a href=""><img src="{% static 'img/app-store.png' %}"></a>
+                    <a href=""><img src="{% static 'img/google-play.png' %}"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="add-section" id="add-section">
+            <div class="container">
+                <div class="row">
+                    <p class="home-header-text">ADVERTISE WITH US!</p>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                            <!-- Slider 1 -->
+                            <div class="slider" id="slider1">
+                                <!-- Slides -->
+                                <div class="vendor-adds">
+                                    <img src="{% static 'img/adds/adver2.png' %}">
+    
+                                </div>
+    
+                                <div class="vendor-adds">
+                                    <img src="{% static 'img/adds/adver2.png' %}">
+                                    <span class="titleBar">
+                                        <p>Comanpy Name </p>
+                                        <p>Short Description or tags </p>
+                                    </span>
+                                </div>
+                                <!-- The Arrows -->
+                                <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
+                                <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
+                                <!-- Title Bar -->
+                                
+                            </div>
+                    </div>
+                    <div class="col s12 m6">
+                            <div class="slider" id="slider3">
+                                    <!-- Slides -->
+                                    
+    
+                                    <div class="vendor-adds">
+                                        <img src="{% static 'img/Lipayran.jpg' %}">
+                                    </div>
+    
+                                    <div class="vendor-adds">
+                                        <img src="{% static 'img/adds/adver2.png' %}">
+                                    </div>
+    
+                                    <div class="vendor-adds">
+                                        <img src="{% static 'img/homepage-background.jpeg' %}">
+                                    </div>
+                                    <div class="vendor-adds">
+                                        <img src="{% static 'img/adds/advertise.png' %}">
+                                    </div>
+    
+                                    <!-- The Arrows -->
+                                    <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
+                                    <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
+                                   
+                            </div>
+                    </div>
+    
+                </div>
+              
+                <div class="row">
+                    <p class="quote center">Kargadoor is the first-ever tech startup that offers an on-demand platform for same-day delivery service in the Philippines that connects SMEs, shoppers, and startaingfamilies with a cost-effective, safe and fast logistical service.</p>
+                </div>
+          </div>
+        </section>
+    
+    <section class="slogan scrollspy" id="slogan">
+        <div class="container">
+            <div class="row">
+                <p class="home-header-text">“KARGADOOR, the language of delivery.
+                        Whatever we deliver!”</p>
+                <p class="center">
+                    We offer pick-up and delivery services that's tailored to your specific needs.
+                    From individual to business, we help you move forward in just a few taps.
+                </p>
+            </div>
+            <div class="row service">
+                    <div class="row">
+                        <div class="col s12 m4 service-sigle">
+                            <img src="{% static 'img/service-icon/same-day-delivery.png' %}">
+                            <div class="row">
+                                <p class="service-name">Same Day Delivery</p>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 service-sigle">
+                            <img src="{% static 'img/service-icon/store-deliveries.png' %}">
+                            <div class="row">
+                                <p class="service-name">Store Deliveries</p>
+                                <span class="service-content">Home and store deliveries made easier with the same day or advance booking.</span>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 service-sigle">
+                            <img src="{% static 'img/service-icon/lipat-bahay.png' %}">
+                            <div class="row">
+                                <p class="service-name">Lipat Bahay</p>
+                                <p class="service-content">Load your bulky home appliances and furniture conveniently.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m4 service-sigle">
+                            <img src="{% static 'img/service-icon/frieght-service.png' %}">
+                            <div class="row">
+                                <p class="service-name">Frieght Service</p>
+                                <p class="service-content">Worry-free logistic support and personalized service.</p>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 service-sigle">
+                            <img src="{% static 'img/service-icon/trucking-service.png' %}">
+                            <div class="row">
+                                <p class="service-name">Trucking Service</p>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 service-sigle">
+                            <img src="{% static 'img/service-icon/pet-shuttle.png' %}">
+                            <div class="row">
+                                <p class="service-name">Pet Shuttle</p>
+                                <p class="service-content">Take your pet to the vet or anywhere safe and sound.</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <section class="search-vehicle scrollspy" id="search-vehicle">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <p class="home-header-text">Find a Truck</p>
+                </div>
+            </div>
+            <div class="row search-area">
+                <!-- truck -->
+                <div class="col s12 m5 trucks">
+                    <div class="row searching">
+                        <p class="white-text">Looking for a Truck? </p>
+                        <div class="col s12 booking-tab">
+                            <ul class="tabs">
+                            <li class="tab col s6"><a class="active" href="#book-now">Book Now</a></li>
+                            <li class="tab col s6"><a href="#book-later">Book Later</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="book-now" class="col s12 book-now">
+                        <form action="{% url 'client:clientVehicleList' %}" method="POST" id="form" name="hey">{% csrf_token %}
+                            <!-- <input type="hidden" name="csrftoken" value="booknow"> -->
+                        <!-- <p>Book Now</p> -->
+                        <div class="input-field col s12">
+                                <select class="icons" name="v_type" required>
+                                    <option value="" disabled selected>Vehicle Type</option>
+                                    {% for i in datas %}
+
+                                    <option value="{{i.description}}">{{i.description}}</option>
+
+
+                                    {% endfor %}
+                                </select>
+                        </div>
+                        <div class="input-field col s12">
+                            <input type="time" data-date-inline-picker="false" name="p_time" data-time-open-on-focus="true" placeholder="Pickup Time" required/>
+                        </div>
+                        <div class="col s12">
+                            <input type="text" value="now" hidden name="now">
+                            <button class="btn waves-effect waves-light " type="submit" name="msg_now" value="bnow">Book Now</button>
+                            <!-- <a class="waves-effect waves-light btn" id="formsub">Book Now</a> -->
+                        </div>
+                    </form>   
+
+                    </div>
+                    <div id="book-later" class="col s12 book-later">
+                        <form action="{% url 'client:clientVehicleList' %}" method="POST" id="form1" name="msg_later">
+                            {% csrf_token %}
+                            <!-- <input type="hidden" name="csrftoken" value="booklater"> -->
+                                <!-- <p>Book Later</p> -->
+                                <div class="input-field col s12">
+                                        <select class="icons" name="v_type_later" required>
+                                            <option value="" disabled selected>Vehicle Type</option>
+                                            {% for i in datas %}
+
+                                            <option value="{{i.description}}">{{i.description}}</option>
+        
+                                            {% endfor %}
+                                        </select>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input type="time" data-date-inline-picker="false" name="p_time_later" data-time-open-on-focus="true" placeholder="Pickup Time" required/>
+                                </div>
+                                <div class="input-field col s12 date">
+                                    <div class="col s12 m6">
+                                            <input type="datetime-local" data-datetime-local-inline-picker="false" name="s_date_later" data-datetime-local-open-on-focus="true" placeholder="Start Date" required/>
+                                    </div>        
+                                    <div class="col s12 m6">
+                                            <input type="datetime-local" data-datetime-local-inline-picker="false" name="e_date_later" data-datetime-local-open-on-focus="true" placeholder="End Date" required/>
+                                    </div>  
+                                </div>
+                                <div class="col s12">
+                                        <input type="text" value="later" hidden name="now">
+                                        <button class="btn waves-effect waves-light " type="submit" name="msg_now" value="blater">Book Later</button>
+                                        <!-- <a class="waves-effect waves-light btn" id="formsub1">Book Later</a> -->
+                
+                                </div>    
+                        </form>  
+                    </div>
+
+                </div>
+
+                <!-- map -->
+                <div class="col s12 m7 home-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3925.2150537151456!2d123.8966513!3d10.3246673!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sph!4v1525963051585" width="100%" height="550px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section1 scrollspy" id="whyKargadoor">
+            <div class="container why-kargadoor">
+                    <div class="row">
+                        <p class="home-header-text">Why Kargadoor?</p>
+                    </div>
+                    <div class="row karga">
+                        <div class="col s12 m7">
+                            <div class="col s12 m6">
+                                <div class="row icon">
+                                    <img src="{% static 'img/icons/gpstracking.png' %}">
+                                    <span class="home-icon">GPS Tracking</span>
+                                </div>
+                                <div class="row icon">
+                                    <img src="{% static 'img/icons/call-support.png' %}">
+                                    <span class="home-icon">SMS or Call Contact</span>
+                                </div>
+                                <div class="row icon">
+                                    <img src="{% static 'img/icons/chat-support.png' %}">
+                                    <span class="home-icon">Chat Support</span>
+                                </div>
+                            </div>
+                            <div class="col s12 m6">
+                                <div class="row icon">
+                                    <img src="{% static 'img/icons/insurance.png' %}">
+                                    <span class="home-icon">Insurance</span>
+                                </div>
+                                <div class="row icon">
+                                    <img src="{% static 'img/icons/customer-support.png' %}">
+                                    <span class="home-icon">24/7 Customer Support</span>
+                                </div>
+                                <div class="row icon">
+                                    <img src="{% static 'img/icons/transparent-pricing.png' %}">
+                                    <span class="home-icon">Transparent Pricing</span>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col s12 m5">
+                            <div class="row">
+                                <div class="row">
+                                    <img src="{% static 'img/icons/karga-van.png' %}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <section class="section2 scrollspy" id="partners">
+        <div class="container partners">
+            <div class="row">
+                <p class="home-header-text">Our Partners</p>
+                <p class="center">Working with the Philippines' biggest and most trusted brands.</p>
+            </div>
+            <div class="row partners-logo">
+                <div class="col s12 m3">
+                    <img src="{% static 'image/logo.png' %}">                    
+                </div>
+                <div class="col s12 m3">
+                    <img src="{% static 'image/logo.png' %}">                    
+                </div>
+                <div class="col s12 m3">
+                    <img src="{% static 'image/logo.png' %}">                    
+                </div>
+                <div class="col s12 m3">
+                    <img src="{% static 'image/logo.png' %}">                    
+                </div>
+                <div class="col s12 m3">
+                    <img src="{% static 'image/logo.png' %}">                    
+                </div>
+                <div class="col s12 m3">
+                    <img src="{% static 'image/logo.png' %}">                    
+                </div>
+                <div class="col s12 m3">
+                    <img src="{% static 'image/logo.png' %}">                    
+                </div>
+                <div class="col s12 m3">
+                    <img src="{% static 'image/logo.png' %}">                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section class="testimonials scrollspy" id="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <p class="home-header-text">Testimonials</p>
+                    <p class="center sub-text">OUR CUSTOMER LOVE KARGADOOR</p>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col s12">
+                            <!-- Slider 1 -->
+                            <div class="slider" id="testimonial">
+                                <!-- Slides -->
+                                <div class="testimony">
+                                    <div class="testimony-img">
+                                        <img src="{% static 'img/homepage-background.jpeg' %}">
+                                    </div>
+                                    <div class="testimony-msg">
+                                        <p>Lorem ipsum  venerit in voluptate velit esse cillum dolore eu fugiate cillum dolore eu fugiat
+                                                e cillum dolore eu fugiate cillum dolore eu fugiate cillum dolore eu fugiat
+                                                e cillum dolore eu fugiate cillum dolore
+                                                psum  venerit in voluptate velit esse cillum dolore eu fugiate cillum dolore eu fugiat
+                                                e cillum dolore eu fugiate cillum dolore eu fugiate cillum dolore eu fugiat
+                                                e cillum dolore eu fugiate cillum cillum dolore eu fugiat
+                                                e cillum dolore eu fugiate cillum dolore eu fugiate cillum dolore eu fugiate cillum dolore eu fugiate cillum dolore eu fugiate cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                    <div class="name">
+                                        <p>Ben Go</p>
+                                    </div>
+                                </div>
+
+                                <div class="testimony">
+                                    <div class="testimony-img">
+                                            <img src="{% static 'img/adver2.png' %}">
+                                    </div>
+                                    <div class="testimony-msg">
+                                        <p>Loreur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                    <div class="name">
+                                        <p>Ai Leen </p>
+                                    </div>
+                                </div>
+                                <div class="testimony">
+                                    <div class="testimony-img">
+                                        <img src="{% static 'img/home-bg.jpeg' %}">
+                                    </div>
+                                    <div class="testimony-msg">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    </div>
+                                    <div class="name">
+                                        <p>Anthony Derecho</p>
+                                    </div>
+                                </div>
+
+                                <!-- The Arrows -->
+                                <i class="left" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"></path></svg></i>
+                                <i class="right" class="arrows" style="z-index:2; position:absolute;"><svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" transform="translate(100, 100) rotate(180) "></path></svg></i>
+                                <!-- Title Bar -->
+                                
+                            </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <section class="section3 scrollspy" id="contactUs">
+        <div class="container contact-us">
+            <div class="row">
+                <p class="home-header-text">How can we help you?</p>
+                <p class="center sub-text">Your feedback matters. Please complete this form and we will get back to you as fast as we can</p>
+            </div>
+            <div class="row details">
+                <div class="col s12 m6">
+                    <div class="row center">
+                        <p class="center updates">Follow us to receive news and updates</p>
+                        <div class="col s12">
+                            <div class="social-media">
+                                <img src="{% static 'img/icons/fb.png' %}">
+                                <img src="{% static 'img/icons/instagram.png' %}">
+                                <img src="{% static 'img/icons/tw.png' %}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row contact-info center">
+                        <p class="contact">For urgent matters, call or text us:</p>
+                        <p class="contact-no">0949.318.7367</p>
+                        <p class="sched">9am - 10pm Daily</p>
+                        <p>You may email us at <a><span class="contact-email">inquiry@kargadoor.com</span></a></p>
+                    </div>
+                </div>
+
+                <div class="col s12 m6">
+                    <form action="">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Enter name here" id="name" type="text" class="validate">
+                                <label for="name">Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="You email here" id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Inquiry" id="inquiry" type="text" class="validate">
+                                <label for="inquiry">Type of Inquiry</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea placeholder="Your message here" id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1">Message</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 center">
+                                    <a class="waves-effect waves-light btn center orange darken-2">submit</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/homepage/js/homepage-js.html' %}
+    <script>
+        $(document).ready(function () {
+            $( "#formsub" ).click(function() {
+                $( "#form" ).submit();
+            });
+        });
+
+        $(document).ready(function () {
+            $( "#formsub1" ).click(function() {
+                $( "#form1" ).submit();
+            });
+    });
+    </script>
+{% endblock %}

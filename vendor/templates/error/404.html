@@ -1,0 +1,41 @@
+{% extends 'vendor/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Page Not Found {% endblock %}
+
+{% block script %}
+    {% include '__inc/404page_not_found/css/404page_not_found-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+     <!-- START CONTENT -->
+     <section id="content">
+        <div class="container page-not-page">
+            <div class="row">
+                
+                <div class="col s12 m6 karga-logo">
+                    <img src="{% static 'image/404/karga404.png' %}" style="width: 100% ">
+                    
+                </div>
+                <div class="col s12 m6 err-message">
+                    <div class="row">
+                        <img src="{% static 'image/404/404.png' %}" style="width: 100% ">
+                    </div>
+                    <div class="row">
+                        <p class="header-text">SORRY</p>
+                        <p class="">THE PAGE YOU ARE LOOKING FOR WAS NOT FOUND</p>
+                    </div>
+                    <div class="row">
+                            <a class="waves-effect waves-light btn orange darken-2" href="{% url 'vendor:dashboard' %}">Go back Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/404page_not_found/js/404page_not_found-js.html' %}
+{% endblock %}

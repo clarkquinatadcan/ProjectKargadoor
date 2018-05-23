@@ -1,0 +1,29 @@
+{
+    "vehicle_type":[
+        {
+        "description": "Wing Van",
+        "status": 1
+    },
+    {
+        "description": "Cargo Truck",
+        "status": 1
+    },
+    {
+        "description": "Mini Truck",
+        "status": 1
+    },
+    {
+        "description": "Canter",
+        "status": 1
+    },
+    {
+        "description": "Container",
+        "status": 1
+    },
+    {
+        "description": "Dump Truck",
+        "status": 1
+    }
+    ],
+    "code":200
+}

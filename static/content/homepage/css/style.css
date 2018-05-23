@@ -1,0 +1,603 @@
+/* Custom CSS */
+/*login modal*/
+.login .modal {
+    width: 500px;
+    max-height: none;
+    top: 5% !important;
+}
+.login .login-txt {
+    font-weight: bold;
+    padding: 0 0 20px 0;
+}
+.login .placeholder-icon {
+    position: relative;
+    top: -5px;
+    left: 2px;
+}
+.login input[type=text]:not(.browser-default), 
+.login input[type=password]:not(.browser-default) {
+    background-color: #e2e1e154;        
+    margin: -15px  0 0 0 !important;
+    border: 1px solid #9e9e9e;
+    border-radius: 5px;
+    height: 3rem;
+}
+.login input[type=text]:not(.browser-default):focus:not([readonly]) + label, 
+.login input[type=password]:not(.browser-default):focus:not([readonly]) + label {
+    color: #F16725;
+}
+
+.login .input-field .prefix.active {
+  color: #292828;
+}
+.login .input-field label {
+    top:-17px;
+}
+.login [type="checkbox"] + label, .login .forgot-password {
+    font-size: 12px;
+}
+.login [type="checkbox"] + label {
+    padding-left: 22px;
+    height: 18px;
+    line-height: 18px;
+}
+.login [type="checkbox"].filled-in:checked + label:before {
+    width: 6px;
+    height: 10px;
+}
+.login [type="checkbox"].filled-in:not(:checked) + label:after {
+    width: 15px;
+    height: 15px;
+}
+.login [type="checkbox"].filled-in:checked + label:after {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #f16725;
+    background-color: #f16725;  
+}
+.login .btn {
+    background-color: #F16725;
+}
+.login .social-media .row {
+    margin-bottom: 10px;
+}
+.login .social-media .btn {
+    text-transform: inherit;
+    width: 100%;
+}
+.login .social-media img {
+    max-width: 100%;
+    padding-right: 20px;
+    position: relative;
+    top: 5px;
+}
+.login .social-media .btn.twitter {
+    padding: 0 0 0 17px;
+}
+.login .social-media .facebook-btn {
+    background-color: #3b5999;
+}
+.login .social-media .instagram-btn {
+background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.login .social-media .twitter-btn {
+    background-color: #5aa4eb;
+}
+.login .modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.login .modal-close .material-icons {
+    color: #59595999;
+    padding: 6px 6px;
+    right: 4px;
+    top: 4px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.login .create-account {
+    padding: 0 0 0 0;
+}
+
+    
+
+/* homepage */
+.homepage .karga-logo img {
+    max-width: 100%;
+}
+.homepage {
+    background-image: url(/static/img/kargadoorbg.png);
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+.homepage .karga-txt {
+    position: relative;
+    top: 6em;
+    left: -25px;
+}
+.homepage .karga-txt h1 {
+    font-weight: bold;
+    line-height: 1;
+    font-size: 3.5em;
+
+}
+.homepage .karga-txt .btn-large {
+    font-weight: 500;
+    text-shadow: 1px 1px 5px #cec5c5bf;
+    margin: 6px 0;
+    width: 50%;
+}
+.homepage .vendor-client {
+    position: absolute;
+    top: 0;
+    right: 24%;
+}
+.homepage .vendor-client ul li {
+    float: right;
+    padding: 15px;
+}
+.homepage .vendor-client ul li a {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+.homepage .vendor-client ul:hover a {
+    -webkit-transform: scale(2);
+	transform: scale(2);
+}
+.homepage .vendor-client ul li a:hover {
+    color: #a5bed6;
+}
+.homepage .vehicle-list ul li a:hover:after {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.homepage .available {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.vehicles .vehicle-list {
+    font-size: 1.8em;
+}
+.vehicles .card {
+    min-height: 355px;
+}
+.vehicles .card-image {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+.vehicles .card-image img {
+    object-fit: cover;
+    height: 180px;
+    width: 100%;
+}
+.vehicles .card .price {
+    position: absolute;
+    z-index: 1;
+    background-color: #f57c00;
+    color: #fff;
+    padding: 0 10px;
+    line-height: 0;
+    top: 15px;
+    left: -15;
+}
+.vehicles .card .price::before {
+    content: "";
+    position: absolute;
+    background-color: #bd6307;
+    height: 25%;
+    width: 11%;
+    top: 99%;
+    left: 0px;
+    z-index: 2;
+    -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.vehicles .card .card-content {
+    padding: 10px 10px;
+    max-height: 25%;
+    overflow: hidden;
+}
+.vehicles .card .card-content img {
+    max-width: 35%;
+}
+.vehicles .card .card-content .truck-price {
+    color: #f57c00;
+    font-weight: bold;
+}
+.vehicles .card .card-content .desciption{
+    color: #f57c00;
+    font-weight: 500;
+    padding: 15px 0 0 0;
+}
+.vehicles .card .buttons {
+    text-align: center;
+    padding: 7px 25px;
+}
+.vehicles .card .buttons:last-child {
+    padding-bottom: 15px;
+}
+.vehicles .card .buttons .btn {
+    text-align: center;
+    padding: 0 18px !important;
+    width: 100%;
+    background-color: #f16726 !important;
+}
+/* .vehicles .btn {
+    width: 100%;
+} */
+.vehicles .divider {
+    height: 2px;
+    overflow: hidden;
+    background-color: #e86600;
+    margin-bottom: 35px;
+}
+/* availble-vehicles section  */
+.availble-vehicles {
+    padding: 20px 0;
+}
+
+/* adds content */
+
+.add-section {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+.add-section img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.add-section .quote {
+    font-size: 22px;
+    padding: 35px 0 0 0;
+}
+.add-section .slider, .slider > div {
+    height: 332px !important;
+}
+
+
+/* service/slogan section  */
+.slogan {
+    padding: 20px 0;
+}
+.slogan .service {
+    padding: 50px 0 0 0;
+}
+.service .service-sigle{
+    text-align: center;
+}
+.service .service-sigle img {
+    width: 100px;
+}
+.service .service-sigle .service-name {
+    font-size: 20px;
+    color: #648eb8;
+    font-weight: bold;
+}
+
+/* searching truck */
+.search-vehicle {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+.search-area {
+    display: flex;
+    flex-flow: row wrap;
+}
+.trucks {
+    background-color: #ffffff;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top: 1px solid #dbd7d770 !important;
+    border-bottom: 1px solid #dbd7d770 !important;
+    box-shadow: 0px 1px 1px 0px #00000069;
+}
+.trucks .searching {
+    background-color: #4a7699;
+    padding: 0 25px;
+    border-top-left-radius: 15px;
+    border-top: 1px solid #dbd7d770 !important;
+    border-left: 1px solid #dbd7d770 !important;
+}
+.trucks .searching .booking-tab {
+    padding: 25px 0 0 0;
+}
+.trucks .booking-tab .tabs{
+    background-color: #4f769c;
+}
+.trucks .booking-tab .tabs .indicator {
+    background-color: #ffffff;
+    height: 100%;
+}
+.trucks .booking-tab .tabs .tab a {
+    color: #ffffff;
+}
+.trucks .booking-tab .tabs .tab a.active {
+    background-color: transparent;
+    color: #4f769c;
+    position: relative;
+    z-index: 4;
+}
+.trucks .booking-tab .tabs .tab:hover a {
+    color: #ffffff96;
+}
+.trucks .booking-tab .tabs .tab:hover a.active {
+    color: #4f769c;
+}
+.trucks .white-text {
+    text-align: center;
+    font-size: 20px;
+}
+.trucks .book-now {
+    font-size: 24px;
+    color: #f9f9f9;
+    padding: 25px 0px;
+}
+.trucks .select-wrapper input.select-dropdown {
+    background-color: white;
+    color: #dadada;
+    margin-bottom: 0px;
+}
+.trucks input[type=text]:not(.browser-default) {
+    width: 100% !important;
+    background-color: #fff;
+    color: #34587c !important;
+}
+.trucks .ws-time {
+    padding-left: 10px;
+}
+.input-button-size-2 {
+    display: none;
+}
+
+.trucks .book-now .btn,
+.trucks .book-later .btn {
+    background-color: #f1592a !important;
+    padding: 0 4rem;
+    width: 100%;
+    text-transform: none;
+    box-shadow: none;
+}
+.trucks .booking {
+    display: flex;
+    justify-content: space-around;
+}
+.trucks .select-wrapper .caret {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 0;
+    fill: rgba(0,0,0,0.87);
+}
+
+.trucks .book-later p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3e658c;
+}
+.trucks .book-later .dropdown-content li > a, .dropdown-content li > span {
+    color: #e26700;
+}
+.trucks .book-later .date {
+    padding: 10px 0;
+    padding-bottom: 20px;
+    margin-top: -10px;
+}
+
+/* date and time plugin */
+
+.trucks .input-picker .picker-list td>button {
+    color: #4f769c;
+}
+
+.trucks .input-picker .picker-list td>button:hover, .input-picker .picker-list td>button.checked-value {
+    background: #e95811;
+    color: #ffffff !important;
+}
+.trucks .input-picker .picker-list.day-list td>button {
+    color: #4f769c;
+}
+.trucks .input-picker .ws-button-row>button {
+    border: .07692em solid #e95811;
+    background-color: #e95811;
+    background-image: linear-gradient(to bottom,#e95811 0,#e95811 100%);
+    transition: border-color 200ms linear;
+    color: #fff;
+}
+
+
+.home-map {
+    padding: 0 !important;
+}
+.home-map iframe {
+    border-top-right-radius:15px;
+    border-bottom-right-radius:15px;
+    border-top: 1px solid #dbd7d770 !important;
+    border-right: 1px solid #dbd7d770 !important;
+    border-bottom: 1px solid #dbd7d770 !important;
+}
+
+
+
+
+/* section1 */
+.section1 {
+    padding: 20px 0;
+}
+.home-header-text {
+    font-size: 2.5em;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0;
+}
+.why-kargadoor .karga {
+    padding: 50px 0 0 0;
+    display:  flex;
+    flex-flow: row wrap;
+}
+.why-kargadoor .karga .col.s12.m7{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.why-kargadoor .karga .col.s12.m5 img {
+    max-width: 100%;
+}
+.why-kargadoor .icon {
+    display: flex;
+    flex-flow: row wrap;
+}
+.why-kargadoor .icon .home-icon {
+    padding: 8px 0 0 20px;
+    font-weight: 500;
+}
+
+/* section2 */
+.section2 {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+.partners-logo {
+    padding: 50px 0 0 0;
+}
+.partners-logo img {
+    max-width: 250px;
+    padding: 32px;
+}
+
+/* section3 */
+
+.section3 {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+.contact-us .details {
+    padding: 50px 0 0px 0;
+}
+.contact-us .updates {
+    font-weight: bold;
+    color: #000000;
+}
+.contact-us .social-media img {
+    max-width: 100%;
+    padding: 15px 15px;
+    text-align: center;
+}
+.contact-us .contact-info {
+    padding: 15px 0;
+}
+.contact-us .contact-info p {
+    line-height: 1;
+}
+.contact-us .contact-info .contact-email, {
+    font-weight: bold;
+}
+.contact-us .contact-no {
+    font-size: 30px;
+    color: #648eb8;
+}
+.contact-us form input:not(.browser-default),
+.contact-us form textarea.materialize-textarea {
+    border: 1px solid #53535385;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin: 0 0 5px 0;
+    background-color: #f4f4f46b;
+}
+.contact-us form textarea.materialize-textarea {
+    min-height: 5rem;
+}
+.contact-us form .input-field.col label {
+    top: -10px;
+}
+.contact-us form .btn {
+    background-color: #f16726 !important;
+    border-radius: 50px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .homepage .karga-txt h1 {
+        font-size: 3.5em;
+    }
+    .homepage .karga-txt {
+        position: relative;
+        top: 5em;
+        left: -25px;
+    }
+}
+
+
+/* testemonials */
+.testimonials {
+    padding: 20px 0;
+}
+.testimonials .slider .slides {
+    background-color: transparent;
+}
+.testimonials .slider .slides li .caption p {
+    color: #333030;
+}
+.testimonials .testemony-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f16726 !important;
+}
+.testimonials .slider .testimony .testimony-img {
+    display: flex !important;
+    justify-content: center;
+    padding: 20px 0;
+}
+.testimonials .slider .testimony .testimony-img img {
+    max-width: 100%;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: 3px solid #4f769c;
+}
+.testimonials .slider .testimony .testimony-msg,
+.testimonials .slider .testimony .name   {
+    text-align: center !important;
+}
+.testimonials .slider > ul > li {
+    width: 8px;
+    height: 8px;
+    margin: 10px 5px 0;
+    border: 1px solid #30577d;
+}
+.testimonials .slider > ul > li:hover {
+    background-color: #30577d;
+}
+.testimonials .slider, .slider > div {
+    overflow: inherit !important;
+}
+.testimonials .slider > ul > .showli {
+    background-color: #4f769c;
+}
+.testimonials .showArrows > .left,
+.testimonials .showArrows > .right {
+    display: none;
+}

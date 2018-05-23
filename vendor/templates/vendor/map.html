@@ -1,0 +1,29 @@
+{% extends 'vendor/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Map {% endblock %}
+
+{% block script %}
+    {% include '__inc/map/css/map-css.html' %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq5R8x7IQTJ96XEKIibc3TC0AApKuTENs&sensor=false"></script>
+{% endblock %}
+
+    {% block sub_content %}
+    <main>
+        <div id="main">
+            <div class="wrapper">
+                <section id="content">
+
+                        <div id="map-canvas"/>
+             
+                </section>
+
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/map/js/map-js.html' %}        
+{% endblock %}

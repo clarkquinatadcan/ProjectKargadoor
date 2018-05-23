@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<!-- DASHBOARD LINK -->
+<link href="{% static 'content/materialize/css/materialize-icon.css' %}" rel="stylesheet">
+<link href="{% static 'content/materialize/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="{% static 'content/vehicle_preview/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="{% static 'content/main-css/css/custom-navbar.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="{% static 'content/main-css/css/custom-footer.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+<!-- ADDED PLUGINS -->
+<link href="{% static 'content/vehicle_preview/plugins/PgwSlider/pgwslider.css' %}"  type="text/css" rel="stylesheet" media="screen,projection">
+<script src="{% static 'content/vehicle_preview/plugins/PgwSlider/jquery-1.12.0.min.js'%}"></script>
+
+<script>
+
+    $(document).ready(function() {
+        $('.pgwSlider').pgwSlider();
+    });
+    
+</script>

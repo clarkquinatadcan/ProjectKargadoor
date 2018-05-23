@@ -1,0 +1,57 @@
+{% extends 'vendor/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Profile {% endblock %}
+
+{% block script %}
+    {% include '__inc/vendor-profile/css/profile-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+    <!-- START CONTENT -->
+    <section id="content">
+        <div class="container">
+            <div class="row col l12">
+                <div class="col s3">
+                    <div class="vendor-profile">
+                    <div class="row prof-img center-align">
+                        <img src="{% static 'image/user-profile.png' %}">
+                    </div>
+                    <div class="company-address s12 center-align">{{ data.fname}} {{ data.lanme }}</div>                        
+                    </div>
+                </div>
+                <div class="col s9">
+                <div class="vendor-details">
+                    <div class="row col l12">
+                        <h4>{{ data.CompanyName }}</h4>
+                        <h6>{{ data.address }}</h6>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col l6">
+                                <div id="map" style="width:100%;height:400px;"></div>
+                        </div>
+                        <div class="col l6">
+                            <h5>Contact Details</h5>
+                            <p><small>Contact No. :</small> {{ data.mobile }}</p>
+                            <p><small>Telephone No. :</small> {{ data.tel }}</p>
+                            <p><small>Email :</small> {{ data.email }}</p>
+                            {% if data.status == 1 %}
+                                <p><small>Status :</small> Active</p>
+                            {% else %}
+                                <p><small>Status :</small> Inactive</p>
+                            {% endif %}
+                        </div>                    
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/vendor-profile/js/profile-js.html' %}
+{% endblock %}

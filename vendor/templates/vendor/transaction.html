@@ -1,0 +1,75 @@
+{% extends 'vendor/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Transaction {% endblock %}
+
+{% block script %}
+    {% include '__inc/transaction/css/transaction-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+    <!-- START CONTENT -->
+    <section id="content">
+        <div class="container transaction">
+            <div class="row">
+                <p class="header-text left">
+                    Transaction History
+                </p>
+                <ul class="transac right">
+                    <li><a href="">All</a></li>
+                    <li><a href="">Completed</a></li>
+                    <li><a href="">Canceled</a></li>
+                </ul>
+                
+            </div>
+
+            <div class="row">
+                    <table class="responsive-table striped highlight">
+                        <thead>
+                            <tr>
+                                <th>Customer Name</th>
+                                <th>Vehicle Type</th>
+                                <th>Check In</th>
+                                <th>Check Out</th>
+                                <th>Payment Status</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                
+                        <tbody>
+                            <tr>
+                                <td>Alvin</td>
+                                <td>Eclair</td>
+                                <td>$0.87</td>
+                                <td>Alvin</td>
+                                <td class="badge-status">  <span class="badge red">Canceled</span> </td>
+                                <td class="view-icon"><i class="material-icons">remove_red_eye</i></td>
+                            </tr>
+                            <tr>
+                                <td>Alan</td>
+                                <td>Jellybean</td>
+                                <td>$3.76</td>
+                                <td>Alvin</td>
+                                <td class="badge-status">  <span class="badge green">Completed</span></td>
+                                <td  class="view-icon"><i class="material-icons">remove_red_eye</i></td>
+                            </tr>
+                            <tr>
+                                <td>Jonathan</td>
+                                <td>Lollipop</td>
+                                <td>$7.00</td>
+                                <td>Alvin</td>
+                                <td class="badge-status"> <span class="badge red">Canceled</span></td>
+                                <td  class="view-icon"><i class="material-icons">remove_red_eye</i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/transaction/js/transaction-js.html' %}
+{% endblock %}

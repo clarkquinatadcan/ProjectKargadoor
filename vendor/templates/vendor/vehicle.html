@@ -1,0 +1,198 @@
+{% extends 'vendor/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Vehicle {% endblock %}
+
+{% block script %}
+    {% include '__inc/vehicle/css/vehicle-css.html'%}
+    <script>
+        $(document).ready(function(){
+
+       var $rows = $('table tr');
+       $("#filters").change(function() {
+
+           var val = '^(?=.*\\b' + $.trim($(this).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
+               reg = RegExp(val, 'i'),
+               text;
+           if ($(this).val() !== 'all') {
+             
+               $rows.show().filter(function() {
+                   text = $(this).text().replace(/\s+/g, ' ');
+                   return !reg.test(text);
+               }).hide();
+             
+           } else {
+               $rows.show();
+           }
+       });
+   });        
+        </script>
+
+{% endblock %}
+
+    {% block sub_content %}
+    <!-- START CONTENT -->
+    <section id="content">
+        <div class="container vehicle">
+            <div class="row">
+                <!-- first column -->
+                <div class="col s12 m6 l3 add-vehicle">
+                    <div class="row add-vehicle1">
+                        <div class="row">
+                            <a class="waves-effect waves-light btn-large orange darken-2 col s12" href="{% url 'vendor:addVehicle' %}"><i class="material-icons left">add</i>Add Vehicle</a>
+                        </div>
+                        <div class="row">
+                            <label>Filter By</label>
+                            <select class="browser-default" id="filters" name="category">
+                                <option value="all">All</option>
+                                {% for i in datas %}
+                                <option value="{{i.description}}">{{i.description}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- second column -->
+                <!-- <div class="col s12 m6 l9 list-vehicle">
+                    
+                    <div class="row">
+                        <p class="header-text">Your Vehicles</p>
+                        <table class="responsive-table striped highlight">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Vehicle Type</th>
+                                        <th>Rate/Hr</th>
+                                        <th>Date Added</th>
+                                        <th>Date Updated</th>
+                                        <th>Details</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody id="category">
+                                    {% for i in vehicle_list %}
+                                    <tr class="single-truck" data-type="{{i.vechicle_type}}">
+                                        <td class="truck-thumbnail">
+                                            <img src="{{endpoint}}{{i.platenumber}}_{{count}}">
+                                        </td>
+                                        
+                                        <td>{{ i.vechicle_type }}</td>
+                                        <td>{{ i.price }}/hour</td>
+                                        <td>{{ i.reg_date }}</td>
+                                        <td>02-May-2018</td>
+                                        <td class="details">
+                                            <a href="{% url 'vendor:vehicleUpdate' v_id=i.vehicle_id %}"><i class="material-icons edit-icon">create</i></a>
+                                            <a href="{% url 'vendor:vehiclePreview' v_id=i.vehicle_id %}"><i class="material-icons">remove_red_eye</i></a>
+                                        </td>
+                                        <td class="status">
+                                            <a href="{% url 'vendor:vehicleDeactivation' v_id=i.vehicle_id %}"><i class="material-icons activate">power_settings_new</i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                
+                <div class="col s12 m6 l3 add-vehicle">
+                        
+                </div> -->
+                <div class="col s12 m6 l9 list-vehicle">
+                    <div class="row">
+
+                            <div class="tab">
+                                <button class="tablinks" onclick="openCity(event, 'active')"  id="defaultOpen">Active List</button>
+                                <button class="tablinks" onclick="openCity(event, 'inactive')">Pending List</button>
+                            </div>
+                            
+                            <div id="active" class="tabcontent">
+                                <p class="header-text">Your Vehicles</p>
+                                {% if msg_act == '200' %}
+                                <table class="responsive-table striped highlight">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Vehicle Type</th>
+                                                <th>Rate/Hr</th>
+                                                <th>Date Added</th>
+                                                <th>Date Updated</th>
+                                                <th>Details</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                            {% for i in vehicle_list %}
+                                            <tr class="single-truck" data-category="{{i.vechicle_type}}">
+                                                <td class="truck-thumbnail">
+                                                    <img src="{{endpoint}}{{i.platenumber}}_{{count_act}}">
+                                                </td>
+                                                
+                                                <td>{{ i.vechicle_type }}</td>
+                                                <td>{{ i.price }}/hour</td>
+                                                <td>{{ i.reg_date }}</td>
+                                                <td>02-May-2018</td>
+                                                <td class="details">
+                                                    <a href="{% url 'vendor:vehicleUpdate' v_id=i.vehicle_id %}"><i class="material-icons edit-icon">create</i></a>
+                                                    <a href="{% url 'vendor:vehiclePreview' v_id=i.vehicle_id %}"><i class="material-icons">remove_red_eye</i></a>
+                                                </td>
+                                                <td class="status">
+                                                    <a href="{% url 'vendor:vehicleDeactivation' v_id=i.vehicle_id %}"><i class="material-icons activate">power_settings_new</i></a>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                </table>
+                                {% else %}
+                                    <h4>No Vehicle Found.</h4>
+                                {% endif %}
+                            </div>
+                            
+                            <div id="inactive" class="tabcontent">
+                                <p class="header-text">Your Pending Vehicles</p>
+                                {% if msg_deact == '200' %}
+                                <table class="responsive-table striped highlight">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Vehicle Type</th>
+                                                <th>Rate/Hr</th>
+                                                <th>Date Added</th>
+                                                <th>Date Updated</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                            {% for i in vehicle_deactlist %}
+                                            <tr class="single-truck" data-category="{{i.vechicle_type}}">
+                                                <td class="truck-thumbnail">
+                                                    <img src="{{endpoint}}{{i.platenumber}}_{{count_inact}}">
+                                                </td>
+                                                
+                                                <td>{{ i.vechicle_type }}</td>
+                                                <td>{{ i.price }}/hour</td>
+                                                <td>{{ i.reg_date }}</td>
+                                                <td>02-May-2018</td>
+
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                </table>
+                                {% else %}
+                                    <h4>No Vehicle Found.</h4>
+                                {% endif %}     
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+{% block js %}
+    {% include '__inc/vehicle/js/vehicle-js.html' %}
+
+{% endblock %}

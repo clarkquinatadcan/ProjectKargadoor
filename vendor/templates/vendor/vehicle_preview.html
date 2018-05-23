@@ -1,0 +1,122 @@
+{% extends 'vendor/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Vehicle Preview {% endblock %}
+
+{% block script %}
+    {% include '__inc/vehicle_preview/css/vehicle_preview-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+    <!-- START CONTENT -->
+    <section id="content">
+        <div class="container vehicle-preview">
+            <div class="row">
+                <div class="col s12 m12">
+                    <p class="header-text">Dump Truck</p>
+                    <div class="row">
+                        <div class="col s12 vpreview-single">
+                            <div class="row">
+                                    <!-- <a class="left">Ratings:</a> -->
+                                    <a class="orange-text right" href="{% url 'vendor:vehicleUpdate' v_id=v_id %}">Update Vehicle</a>
+                            </div>
+                            <div class="row">
+                                <ul class="pgwSlider">
+                                    <li><img src="{% static 'image/truck-thumbnail.png' %}"></li>
+                                    <li><img src="{% static 'image/truck1.jpg' %}"></li>
+                                    <li><img src="{% static 'image/truck.jpeg' %}"></li>
+                                    <li><img src="{% static 'image/truck1.jpg' %}"></li>
+                                    <li><img src="{% static 'image/truck.jpeg' %}"></li>
+                                    <li><img src="{% static 'image/truck5.jpg' %}"></li>
+                                    <li><img src="{% static 'image/truck4.jpeg' %}"></li>
+                                    <li><img src="{% static 'image/truck5.jpg' %}"></li>
+                                    <li><img src="{% static 'image/truck6.jpeg' %}"></li>
+                                    <li><img src="{% static 'image/truck5.jpg' %}"></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <p class="orange-text">Description</p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, bibendum sed semper ornare sunt sed, morbi urna amet maecenas senectus ac ac, aliquam dolor ligula, nam placerat hac sociosqu consectetuer at rhoncus. Vel adipiscing, arcu quisque, integer class mauris torquent, amet at. Pede accusamus vel diam consequat enim potenti, pellentesque lacus tincidunt. Quam feugiat non amet aliquam ac, ornare id euismod. Metus mauris odio elit nullam, tellus mi nulla ipsum odio vitae, mus ligula leo.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 m6 additional-info">
+
+                                    <p>Additional Information:</p>
+                                    <table class="">
+                                        <tbody>
+                                            <tr>
+                                                <th>Vehicle Type</th>
+                                                <td>Dump Truck</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Plate Number</th>
+                                                <td>ATD-355</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Quantity</th>
+                                                <td>2</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Capacity</th>
+                                                <td>200lbs</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Price/hour</th>
+                                                <td>P 1000.00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Tank Capacity</th>
+                                                <td>2 Liters</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col s12 m7 comment">
+                            <ul>
+                                <li>
+                                    <div class="row">
+                                        <p class="comment-name">Mar Gensis</p>
+                                        <p class="comment-message">
+                                                Lorem ipsum dolor sit amet, bibendum sed semper ornare sunt sed, morbi urna, Lorem ipsum dolor sit amet, bibendum sed semper ornare sunt sed, morbi urna
+                                                Lorem ipsum dolor sit amet, bibendum sed semper ornare sunt sed, morbi urna
+                                                Lorem ipsum dolor sit amet, bibendum sed semper ornare sunt sed, morbi urna
+                                        </p>
+                                        <span class="reply-message"><a id="reply-btn">Reply</a></span>
+                                        <div class="input-text col s12">
+                                            <form action="" id="replybox-form" style="display:none">
+                                                <input placeholder="Write a reply..." for="reply">
+                                                <a class="waves-effect waves-light btn orange darken-2 right" href="">Send</a>
+                                            </form>
+                                        </div>
+                                        <div class="col s12 reply">
+                                            <p class="comment-name-replied">Obed Oano</p>
+                                            <p class="comment-message-replied">
+                                                    Lorem ipsum dolor sit amet, bibendum na
+                                                    Lorem ipsum dolor sit amet, bibendum sed semper ornare sunt sed, morbi urna
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+{% block js %}
+    {% include '__inc/vehicle_preview/js/vehicle_preview-js.html' %}
+{% endblock %}

@@ -1,0 +1,39 @@
+/* Custom CSS */
+
+/* Vendor Registration */
+.registration {
+    padding: 32px 100px;
+}
+.registration .vendor-form {
+    background-color: #ffffff;
+        padding: 5px 35px !important;
+    border-radius: 8px;
+    border: 1px solid #b3acac52;
+    
+    overflow: hidden;
+    box-shadow: 0px 2px 10px 0px #00000021;
+}
+.registration .vendor-form p {
+    font-weight: 500;
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+.registration .divider {
+    height: 3px;
+    overflow: hidden;
+    background-color: #f1592a;
+    margin: 20px 0;
+}
+.input-field .prefix.active {
+    color: #f1592a;
+}
+.orange.darken-2 {
+    background-color: #f1592a !important;
+}
+.registration .pass-view-icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #454444e0;
+    cursor: pointer;
+}

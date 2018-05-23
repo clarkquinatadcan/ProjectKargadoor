@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<header>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper container homepage-navbar">
+                <a href="/" class="brand-logo"><img src="{% static 'image/logo.png' %}" ></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">         
+                    <li><a href="{% if request.resolver_match.url_name == 'vendorRegistration' %}/#section1{% else %}#section1{% endif %}">Why Kargadoor</a></li>
+                    <li><a href="{% if request.resolver_match.url_name == 'vendorRegistration' %}/#{% else %}#{% endif %}">Service</a></li>      
+                    <li><a href="{% if request.resolver_match.url_name == 'vendorRegistration' %}/#section3{% else %}#section3{% endif %}">Contact Us</a></li>                
+                    
+                    {% if status == 3 %}
+                        <li><a href="{% url 'client:clientBooking' %}" class="log-in">Book History</a></li>
+                        <li><a href="#" class="log-in">{{ fullname }}</a></li>
+                        <li><a href="{% url 'vendor:logout' %}" class="log-in">Logout</a></li>
+                    {% else %}
+                        <li class="{% if request.resolver_match.url_name == 'vendorRegistration' %}active{% endif %}"><a href="{% url 'home:vendorRegistration' %}" class="log-in">Sign Up</a></li>
+                        <li><a href="{% url 'vendor:login' %}" class="log-in">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

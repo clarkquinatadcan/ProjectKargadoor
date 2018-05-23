@@ -1,0 +1,26 @@
+{% extends 'vendor/index.html' %} 
+{% load staticfiles %}
+
+{% block title %} {% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+    {% block content %}
+        {% include 'common/navbar.html' %}
+        <main>
+            <div id="main">
+                <div class="wrapper">
+                    {% block sub_content %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </main>
+        {% include 'common/footer.html' %}
+    {% endblock %}
+
+{% block js%}
+
+{% endblock %}

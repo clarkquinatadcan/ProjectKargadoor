@@ -1,0 +1,262 @@
+/* Custom Clent page CSS */
+
+/* searching  */
+.client-vehicle-map .trucks-calculation {
+    position: absolute;
+    background: #fff;
+    z-index: 1;
+    top: 370px;
+    left: 5%;
+    width: 90%;
+    margin-bottom: auto;
+    border-radius: 3px;
+    box-shadow: 0 0 8px #00000061;
+}
+.client-vehicle-map .trucks-calculation .row:first-child {
+    border-bottom:  1px solid #6969695c;
+    margin-bottom: 0;
+}
+.client-vehicle-map .trucks-calculation .row:last-child {
+    margin-bottom: -17px;
+}
+.client-vehicle-map .trucks-calculation  .input-field .prefix ~ input {
+    margin-bottom: -5px;
+    border-bottom: none;
+    margin-left: 2.5rem;
+    cursor: pointer;
+}
+.client-vehicle-map .trucks-calculation .input-field .prefix {
+    top: 5px;
+}
+.client-vehicle-map .trucks-calculation  .input-field .prefix.active {
+    color: #f1592a !important;
+}
+.client-vehicle-map .trucks-calculation .input-field {
+    border-right:   1px solid #6969695c;
+    margin: 5px 0;
+}
+.client-vehicle-map .trucks-calculation  .input-field:last-child {
+    border-right: none;
+}
+
+.client-vehicle-map .trucks-calculation .address .calculate {
+    background: #f1592a;
+    padding: 13px;
+    color: #fff;
+    text-align: center;
+}
+.client-vehicle-map .trucks-calculation .address .calculate a {
+    color: #ffffff;
+}
+.client-vehicle-map .select-wrapper .caret {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 0;
+    fill: rgba(0,0,0,0.87);
+}
+.client-vehicle-map .select-wrapper input.select-dropdown {
+    border-bottom: none;
+    margin-bottom: -7px;
+    color: #f1592a;
+}
+.client-vehicle-map .dropdown-content li > a, .dropdown-content li > span {
+    color: #e25700;
+}
+
+/* calendar and time*/
+.client-vehicle-map .input-picker .picker-list td>button:hover, .input-picker .picker-list td>button.checked-value {
+    background: #e25700;
+    color: #ffffff !important;
+}
+.client-vehicle-map abbr[title] {
+    border-bottom: none;
+    text-decoration: none !important;
+}
+.client-vehicle-map .trucks-calculation .input-picker .ws-button-row>button {
+    border: .07692em solid #c35008;
+    background-color: #e25700;
+    background-image: linear-gradient(to bottom,#e25700 0,#e25700 100%);
+    transition: border-color 200ms linear;
+    color: #fff;
+}
+.client-vehicle-map .trucks-calculation .input-picker .picker-list td>button {
+    color: #4f769c;
+}
+/* end searching */
+
+/* Modal for Calculation */
+.client-vehicle-map .modal {
+    max-width: 40% !important;
+
+}
+.client-vehicle-map .modal .modal-content {
+    background-color: #5e8db4;
+    padding: 0;
+}
+.client-vehicle-map .modal .modal-content .truck-selected-img {
+    background-color: #3a5b76;
+}
+.client-vehicle-map .modal .modal-content .truck-selected-img img {
+    max-width: 100%;
+}
+.client-vehicle-map .modal .modal-content .standart-rate,
+.client-vehicle-map .modal .modal-content .details {
+    text-align: center;
+    padding: 24px;
+}
+.client-vehicle-map .modal .modal-content .standart-rate p {
+    font-size: 28px;
+    margin: 0;
+    color: #fff;
+    font-weight: 100;
+}
+.client-vehicle-map .modal .modal-content .standart-rate span {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+}
+.client-vehicle-map .modal .modal-content table td,
+.client-vehicle-map .modal .modal-content table  th {
+    color: #f2f4f6;
+    font-weight: normal;
+    padding: 10px 5px;
+}
+.client-vehicle-map .modal .modal-content table td {
+    padding-right: 20%;
+}
+.client-vehicle-map .modal .modal-footer {
+    background-color: #5e8db4;
+    text-align: center;
+    padding: 5px 6px 70px 0;
+}
+.client-vehicle-map .modal .modal-footer .btn-flat {
+     margin: 6px 25px;
+}
+.client-vehicle-map .modal .modal-footer .btn-flat:first-child {
+    color: #fff;
+    background: #3b5b75;
+}
+.client-vehicle-map .modal .modal-footer .btn-flat:last-child {
+    color: #f1592a;
+    background: #ffffff;
+}
+
+
+/* End Modal for Calculation */
+
+
+
+
+/* adds slider */
+.client-vehicleList .slider, .slider > div {
+    height: 332px !important;
+    z-index: 0;
+}
+.client-vehicleList .slider img, .slider > div img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* end adds .slider */
+
+
+
+.client-vehicleList {
+	padding: 30px 0;
+}
+.client-vehicleList .settings .material-icons {
+    font-size: 50px;
+    color: #f1592a;
+    cursor: pointer;
+}
+
+.client-vehicleList .settings .material-icons:hover {
+    font-size: 50px;
+    color: #da4518;
+    cursor: pointer;
+}
+.client-vehicleList .search  .material-icons {
+    position: absolute;
+right: -20px;
+    top: 0;
+    font-size: 32px;
+    color: #fff;
+    background-color: #f1592a;
+    border-radius: 100%;
+    padding: 8px;
+}
+.client-vehicleList  input[type=text]:not(.browser-default) {
+    border: 2px solid #f1592a;
+    border-radius: 50px;
+    /*width: 90%;*/
+    padding: 0 0 0 25px;
+}
+.client-vehicleList .choices {
+    border: 1px solid #b4b2b2d1;
+    padding: 20px;
+}
+.client-vehicleList [type="checkbox"].filled-in:not(:checked) + label:after {
+    border: 2px solid #f1592a;	
+}
+.client-vehicleList [type="checkbox"].filled-in:checked + label:after {
+    border: 2px solid #f1592a;
+    background-color: #f1592a;
+}
+
+/*available trucks*/
+.client-vehicleList .trucks .single-truck {
+	padding: 8px;
+}
+.client-vehicleList .card {
+    background-color: transparent;
+    border: 1px solid #b4b2b2d1;
+    box-shadow: none;
+    margin: 0;
+}
+.client-vehicleList .card .card-image img {
+    max-width: 100%;
+}
+.client-vehicleList .card .card-content {
+	padding: 15px;
+}
+.client-vehicleList .card .card-content .price-rating {
+	padding: 0 0 15px 0;
+}
+.client-vehicleList .card .card-content .price-rating span img {
+	max-width: 100%;
+	width: 116px;
+}
+.client-vehicleList .card .card-content .price-rating .truck-price {
+    font-weight: bold;
+    color: #f16726;
+}
+.client-vehicleList .card .card-content .desc {
+    color: #f16726;
+}
+.client-vehicleList .card .booking-quotation {
+	padding: 32px 0 0 0;
+}
+.client-vehicleList .card .booking-quotation .row {
+	margin: 0 0 10px 0;
+}
+.client-vehicleList .card .booking-quotation .btn {
+	width: 100%;
+	text-transform: none;
+}
+.client-vehicleList .orange.darken-2 {
+    background-color: #f1592a !important;
+}
+
+/*pagination */
+.client-vehicleList .pagination li a {
+	color: #f16726 !important;
+}
+.client-vehicleList .pagination li.active a {
+	color: #ffffff !important;
+	background-color:  #f1592a !important;
+}

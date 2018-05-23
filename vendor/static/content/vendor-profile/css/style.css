@@ -1,0 +1,41 @@
+/* Custom Stylesheet */
+@font-face {
+    font-family: 'HelveticaNeueMed';
+    src: url('../../../fonts/helveticaneue/HelveticaNeueMed.ttf');
+}
+
+body {
+    font-family: 'HelveticaNeueMed';
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-size: 1em;
+}
+.header-text {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+
+    /* profile page */
+.vendor-profile{
+    background-color: #fff;
+    padding: 10px 30px 30px 30px;
+    border-radius: 8px;
+    border: 1px solid #b3acac52;
+    padding-right: 3% !important; 
+}
+
+.vendor-details {
+    background-color: #fff;
+    padding: 10px 30px 30px 30px;
+    border-radius: 8px;
+    border: 1px solid #b3acac52;
+}
+
+
+.company-name{
+    font-size   : 2em;
+
+}

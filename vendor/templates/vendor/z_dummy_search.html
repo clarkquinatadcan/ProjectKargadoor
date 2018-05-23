@@ -1,0 +1,90 @@
+{% extends 'vendor/index.html' %}
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Transaction {% endblock %}
+
+{% block script %}
+    {% include '__inc/transaction/css/transaction-css.html' %}
+
+{% endblock %}
+
+    {% block content %}
+    <!-- START CONTENT -->
+    <section id="content">
+        <div class="container transaction">
+            <h2>Vehicle List</h2>
+            <p>Type something in the input field to search the list for specific items:</p>
+            <input id="myInput" type="text" placeholder="Search..">
+            <br>
+            {% for i in data %}
+            <ul id="myList">
+              <li><img src="{{url}}/{{i.platenumber}}_{{count}}" style="height:100px; width:100px;" ></img><a href="{% url 'client:booking' v_id=i.vehicle_id %}">{{i.vechicle_type}} | <span style="color:#ccc;"> {{ i.description  }}</a></span> </li>
+
+            </ul>
+            {% endfor %}
+            
+
+            <div class="col s12 m6 l9 list-vehicle">
+                    
+                <div class="row">
+                    <p class="header-text">Your Vehicles</p>
+                    <table class="responsive-table striped highlight">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Vehicle Type</th>
+                                    <th>Rate/Hr</th>
+                                    <th>Date Added</th>
+                                    <th>Date Updated</th>
+                                    <th>Details</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                {% for i in vehicle_list %}
+                                <tr>
+                                    <td class="truck-thumbnail">
+                                        <img src="{{endpoint}}{{i.platenumber}}_{{count}}">
+                                    </td>
+                                    
+                                    <td>{{ i.vechicle_type }}</td>
+                                    <td>{{ i.price }}/hour</td>
+                                    <td>{{ i.reg_date }}</td>
+                                    <td>02-May-2018</td>
+                                    <td class="details">
+                                        <a href="{% url 'vendor:vehicleUpdate' v_id=i.vehicle_id %}"><i class="material-icons edit-icon">create</i></a>
+                                        <a href="{% url 'vendor:vehiclePreview' v_id=i.vehicle_id %}"><i class="material-icons">remove_red_eye</i></a>
+                                    </td>
+                                    <td class="status">
+                                        <a href="{% url 'vendor:vehicleDeactivation' v_id=i.vehicle_id %}"><i class="material-icons activate">power_settings_new</i></a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/transaction/js/transaction-js.html' %}
+
+    <script src="{% static 'content/main-css/jquery/jquery.min.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myList li").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+
+          });
+        });
+    </script>
+{% endblock %}

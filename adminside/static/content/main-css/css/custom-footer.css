@@ -1,0 +1,12 @@
+.vendor-footer {
+    background-color: #e96701 !important;
+    padding: 12px 0 !important;
+    color: #ffffff;
+    font-weight: 500;
+}
+.page-footer {
+    padding-top: 0!important;
+}
+.page-footer .container {
+    padding: 0px 0 15px 0px;
+}

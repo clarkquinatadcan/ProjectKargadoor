@@ -1,0 +1,104 @@
+{% extends 'vendor/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Kargadoor | New Vehicle {% endblock %}
+
+{% block script %}
+    {% include '__inc/vehicle_add/css/vehicle_add-css.html' %}  
+{% endblock %}
+<!-- <i class="material-icons prefix">textsms</i> -->
+
+    {% block sub_content %}
+    <!-- START CONTENT -->
+    <section id="content">
+        <div class="container new-vehicle">
+            
+            <div class="row vehicle-details">
+                <!-- first column -->
+                <form method="POST" enctype="application/json" id="form">{% csrf_token %}
+                    <div class="col s12 m6 l7 vehicle-image">
+                        <div class="row">
+                            <input type="file" id="files" multiple name="yea"/>
+                        </div>
+                    </div>
+
+                    <!-- second column -->
+                    <div class="col s12 m6 l5 vehicle-inputs">
+                    
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <!-- <input placeholder="" type="text" id="vechicle_type" value="" name="v_type" required="" aria-required="true">
+                                <label for="vechicle_type">Vehicle Type</label> -->
+                                <select name="v_type" required id="hey">
+                                    <option value="" selected>Vehicle Type</option>
+                                    {% for i in datas %}
+                                    <option value="{{i.description}}">{{i.description}}</option>
+                                    {% endfor %}
+                                </select>
+                                <label for="vechicle_type">Vehicle Type</label>                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="" type="text" id="platenumber" name="plate" required="" aria-required="true">
+                                <label for="platenumber">Plate Number</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="" type="number" min="1" id="qty" name="qty" required="" aria-required="true">
+                                <label for="qty">Quantity</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="" type="number" min="1" id="capacity" name="capacity" required="" aria-required="true">
+                                <label for="capacity">Capacity</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="" type="text" id="price" name="price" required="" aria-required="true">
+                                <label for="price">Price/hour</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="" type="number" min="1" id="stockonhand" name="soh" required="" aria-required="true">
+                                <label for="stockonhand">Stock on Hand</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="" type="text" id="unit" class="" name="unit" required="" aria-required="true">
+                                <label for="unit">Unit</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="" type="number" min="1" id="tankcapacity" class="" name="tankcap" required="" aria-required="true">
+                                <label for="tankcapacity">Tank Capacity</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea placeholder="Add a desciption of your unit..." id="description" class="materialize-textarea" 
+                                    data-length="150" name="des" required="" aria-required="true"></textarea>
+                                <label for="description">Description</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <a class="waves-effect waves-light btn-large orange darken-2 right" id="enviar">Save</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+{% block js %}
+    {% include '__inc/vehicle_add/js/vehicle_add-js.html' %}
+{% endblock %}
+

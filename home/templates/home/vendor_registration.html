@@ -1,0 +1,144 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Home Page {% endblock %}
+
+{% block script %}
+    {% include '__inc/vendor_registration/css/vendor_registration-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+     <!-- START CONTENT -->
+     <section id="content">
+        <div class="container registration">
+            <div class="row vendor-form">
+                <div class="col s12">
+                    <div class="row">
+                        <p class="header-text">
+                            Kargadoor Logistics Application Form
+                        </p>
+
+                    </div>
+                    <div class="divider"></div>
+                    
+                    <form action="" method="POST" enctype="application/json">{% csrf_token %}
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                    <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                                <input id="fname" type="text" name="Fname" required>
+                                <label for="fname" class="center-align">First Name</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                                <input id="lname" type="text" name="Lname" required>
+                                <label for="lname" class="center-align">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                                <input id="address" type="text" name="address" required>
+                                <label for="address" class="center-align">Address</label>
+                            </div>
+                            
+                            <div class="input-field col s12 m6">
+                                <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                                <input id="email" type="email" name="Email" required>
+                                <label for="email" class="center-align">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons pass-view-icon" onclick="myFunction()">remove_red_eye</i>
+                                <input id="password" type="password" class="validate" name="pwd" required>
+                                <label for="icon_prefix3">Password</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <i class="material-icons pass-view-icon" onclick="retypePass()">remove_red_eye</i>                 
+                                <input id="confirm_password" type="password" name="confirm_password" required>
+                                <label for="icon_prefix3" class="center-align">Re-Type Password</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                    <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                                <input id="phone-demo" type="tel" name="tel" required>
+                                <label for="tel" class="center-align">Tel. No</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                    <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                                <input id="phone-code" type="text" name="mobile" required>
+                                <label for="mobile"  class="center-align">Mobile Number</label>
+                            </div>
+                        </div>
+                        
+
+
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                                <input id="payment" type="text" name="Payment" required>
+                                <label for="payment" class="center-align">Mode of Payment</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <!-- <i class="mdi-action-account-circle prefix"></i> -->
+                                <input id="company-name" type="text" name="CompanyName" required>
+                                <label for="company-name" class="center-align">Company Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12 center">  
+                                <button class="btn waves-effect waves-light btn right  orange darken-2" type="" id="addven" name="">Submit
+                                    <!-- <i class="mdi-content-send right"></i> -->
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <h2 id='message'></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/vendor_registration/js/vendor_registration-js.html' %}
+    <script>
+
+        var password = document.getElementById("password")
+        ,confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword(){
+            if(password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+
+        function myFunction() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+
+        }
+
+        function retypePass() {
+            var y = document.getElementById("confirm_password");
+            
+            if (y.type === "password") {
+                y.type = "text";
+            } else {
+                y.type = "password";
+            }
+        }
+    </script>
+{% endblock %}

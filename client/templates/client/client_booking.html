@@ -1,0 +1,62 @@
+{% extends 'client/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Booking {% endblock %}
+
+{% block script %}
+    {% include '__inc/client_booking/css/client_booking-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+     <!-- START CONTENT -->
+     <section id="content"> 
+        <div class="container booking">
+            <div class="row">
+                <h5> <small>Client Name : {{ client.fname }} {{ client.lname }}</small></h5>
+                <br>
+                <div class="col s12 m12 l12">
+                    <table class="striped">
+                        <thead>
+                        <tr>
+                            <th data-field="id">VEHICLE ID</th>
+                            <th data-field="b_id">BOOKING ID</th>
+                            <th data-field="s_date">START DATE</th>
+                            <th data-field="e_date">END DATE</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% if msg == '200' %}
+                            {% for bl in book_list %}
+                                {% if bl.client_id == client.client_id %}
+                                <tr>
+                                
+
+                                    <td>{{ bl.vehicleID }}</td>
+                                    <td>{{ bl.bookingID }}</td>
+                            
+                                    <td>{{ bl.start_date }}</td>
+                            
+                                    <td>{{ bl.end_date }}</td>
+                                    
+                                </tr>   
+                                {% endif %}
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td>No Content Found!</td>
+                            </tr> 
+                        {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- END CONTENT -->
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/client_booking/js/client_booking-js.html' %}
+{% endblock %}

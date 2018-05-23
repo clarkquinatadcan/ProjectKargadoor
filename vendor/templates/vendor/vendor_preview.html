@@ -1,0 +1,102 @@
+{% extends 'vendor/base.html' %} 
+{% load staticfiles %}
+
+{% block title %} Kargadoor | Preview {% endblock %}
+
+{% block script %}
+    {% include '__inc/vendor_preview/css/vendor_prev-css.html' %}
+{% endblock %}
+
+    {% block sub_content %}
+    <main>
+        <div id="main">
+            <div class="wrapper">
+                <!-- START CONTENT -->
+                <section id="content">
+                    <div class="container">
+                        <div class="row">
+                            <div id="table-datatables">
+                                <h6 class="header">Active List</h6>
+                                <div class="row">
+                                    <div class="col s12 m12 l12">
+                                        <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Address</th>
+                                                    <th>Email</th>
+                                                    <th>Mobile No.</th>
+                                                    <th>Telephone No.</th>
+                                                    <th>Payment</th>
+                                                    <th>Company Name</th>
+                                                </tr>
+                                            </thead>
+                    
+                                            <tbody>
+                                                {% for i in active %}
+                                                <tr>
+                                                    <td><a href="{% url 'vendor:update' ven_id=i.ven_id %}">{{ i.ven_id }}</a></td>
+                                                    <td>{{ i.fname }} {{ i.lanme }}</td>
+                                                    <td>{{ i.address|truncatewords:"5" }}</td>
+                                                    <td>{{ i.email }}</td>
+                                                    <td>{{ i.mobile }}</td>
+                                                    <td>{{ i.tel }}</td>
+                                                    <td>{{ i.payment }}</td>
+                                                    <td>{{ i.CompanyName }}</td>
+                                                    <td><a href="{% url 'vendor:addVehicle' ven_id=i.ven_id %}">ADD VEHICLE</a></td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <h6 class="header">Inactive List</h6>
+                                <div class="row">
+                                    <div class="col s12 m12 l12">
+                                        <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Address</th>
+                                                    <th>Email</th>
+                                                    <th>Mobile No.</th>
+                                                    <th>Telephone No.</th>
+                                                    <th>Payment</th>
+                                                    <th>Company Name</th>
+                                                </tr>
+                                            </thead>
+                    
+                                            <tbody>
+                                                {% for i in inactive %}
+                                                <tr>
+                                                    <td><a href="{% url 'vendor:update' ven_id=i.ven_id %}">{{ i.ven_id }}</a></td>
+                                                    
+                                                    <td>{{ i.fname }} {{ i.lanme }}</td>
+                                                    <td>{{ i.address|truncatewords:"5" }}</td>
+                                                    <td>{{ i.email }}</td>
+                                                    <td>{{ i.mobile }}</td>
+                                                    <td>{{ i.tel }}</td>
+                                                    <td>{{ i.payment }}</td>
+                                                    <td>{{ i.CompanyName }}</td>
+                                                    
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- END CONTENT -->
+            </div>
+        </div>
+    </main>
+    {% endblock %}
+
+
+{% block js%}
+    {% include '__inc/vendor_preview/js/vendor_prev-js.html' %}
+{% endblock %}

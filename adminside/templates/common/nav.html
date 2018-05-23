@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<header>
+    <div class="navbar-fixed">
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li>
+                <div class="card black">
+                    <div class="card-content white-text">
+                      <div class="row prof-img">
+                            <img src="{% static 'image/user-profile.png' %}">
+                      </div>
+                      <div class="row prof-title">
+                            <span class="card-title">{{ fullname }}</span>
+                            <p>{{ address }}</p>
+                      </div>
+                      
+                    </div>
+                    <div class="card-action">
+                        <a href="{% url 'vendor:profile' ven_id=1 %}" class="white-text">Profile</a>
+                        <a href="#" class="white-text">Account</a>
+                        <a href="{% url 'vendor:logout' %}" class="white-text">Logout</a>
+                    </div> 
+                </div>
+            </li>
+        </ul>
+        <nav class="nav-extended orange darken-2" role="navigation">
+            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="{% static 'image/logo.png' %}" ></a>
+            <ul class="right hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{{ fullname }}<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+
+            </div>
+            <div class="nav-content">
+                <ul class="container">
+                    <li class="{% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}"><a href="{% url 'vendor:dashboard' %}">Dashboard</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'transaction' %}active{% endif %}"><a href="{% url 'vendor:transaction' %}">Transaction History</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'calendar' %}active{% endif %}"><a href="{% url 'vendor:calendar' %}">Calendar</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'map' %}active{% endif %}"><a href="{% url 'vendor:map' %}">Map</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'vehicle' %}active{% endif %}"><a href="{% url 'vendor:vehicle' %}">Vehicle</a></li>                                       
+                    <li class="{% if request.resolver_match.url_name == 'settings' %}active{% endif %}"><a href="{% url 'vendor:settings' %}">Settings</a></li> 
+                </ul>
+                <ul class="right nav-icon">
+                    <li class="message-notif"><a href=""><i class="material-icons">email</i></a><span class="badge">!</span></li>
+                    <li class="notification"><a href=""><i class="material-icons">info_outline</i></a><span class="badge">!</span></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="section1">
+        <div class="container">
+            <p class="right">Your last login: 3 hours ago from Philippines</p>
+        </div>
+    </div>
+</header>

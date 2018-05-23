@@ -1,0 +1,26 @@
+{% extends 'home/index.html' %}
+{% load staticfiles %}
+
+{% block title %} {% endblock %}
+
+{% block script %}
+
+{% endblock %}
+
+    {% block content %}
+        {% include 'common/homepage_nav.html' %}
+        <main>
+            <div id="main">
+                <div class="wrapper">
+                    {% block sub_content %}
+
+                    {% endblock %}
+                </div>
+            </div>
+        </main>
+        {% include 'common/homepage_footer.html' %}
+    {% endblock %}
+
+{% block js%}
+
+{% endblock %}
